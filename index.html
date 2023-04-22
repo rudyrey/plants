@@ -1718,7 +1718,7 @@
           const randomPlant = plants[randomPlantIndex];
           const correctAnswer = randomPlant[quizType];
           const imageElement = document.getElementById("image");
-          imageElement.src = randomPlant.Images[0];
+          imageElement.src = randomPlant.Images[getRandomInt(randomPlant.Images.length)];
 
           // Remove the selected plant from the plants array
           plants.splice(randomPlantIndex, 1);
