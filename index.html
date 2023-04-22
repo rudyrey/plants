@@ -1720,6 +1720,9 @@
           const imageElement = document.getElementById("image");
           imageElement.src = randomPlant.Images[0];
 
+          // Remove the selected plant from the plants array
+          plants.splice(randomPlantIndex, 1);
+
           const options = [correctAnswer];
           while (options.length < 4) {
             const optionIndex = getRandomInt(plants.length);
