@@ -161,8 +161,11 @@
           li {
             display: flex; justify-content: center; align-items: center; text-align: center;
           }
+          .top-bar h1 {
+            margin-bottom: 0px; /* Reduce the margin-top of h3 */
+          }
           .top-bar h3 {
-            margin-top: -30px; /* Reduce the margin-top of h3 */
+            margin-top: 0px; /* Reduce the margin-top of h3 */
           }
         }
         /* Style the top bar */
@@ -3810,7 +3813,7 @@
         const shareButton = document.getElementById("share");
         shareButton.onclick = () => {
           const asterisk = quizType === "Scientific Name" ? "*" : "";
-          const resultText = `Nativle ${correctCount}/10${asterisk}\n${answerTracking}`;
+          const resultText = `Nativle ${correctCount}/10${asterisk}\nhttps://bit.ly/nativle\n${answerTracking}`;
           copyToClipboard(resultText);
 
           const messageElement = document.getElementById("message");
