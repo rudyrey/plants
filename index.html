@@ -1686,6 +1686,10 @@
         let correctCount = 0;
         let answerTracking = "";
         let correctPlantNames = [];
+        let correctEmoji = "🌱";
+        let incorrectEmoji = "🍂";
+        let plantNames = [];
+        let answerResults = [];
 
         function getQuizData() {
             return jsonData.plants;
@@ -1703,89 +1707,84 @@
             return array;
         }
 
-        function displayResult() {
-            const resultElement = document.getElementById("result");
-            resultElement.textContent = `You got ${correctCount} out of 10 correct.`;
-        }
-
         function displayQuestion() {
-            if (questionCount >= 10) {
-                displayResult();
-                return;
+          if (questionCount >= 10) {
+            displayResult();
+            return;
+          }
+
+          const plants = getQuizData();
+          const randomPlantIndex = getRandomInt(plants.length);
+          const randomPlant = plants[randomPlantIndex];
+          const correctAnswer = randomPlant[quizType];
+          const imageElement = document.getElementById("image");
+          imageElement.src = randomPlant.Images[0];
+
+          const options = [correctAnswer];
+          while (options.length < 4) {
+            const optionIndex = getRandomInt(plants.length);
+            const option = plants[optionIndex][quizType];
+            if (!options.includes(option)) {
+              options.push(option);
             }
+          }
 
-            const plants = getQuizData();
-            const randomPlantIndex = getRandomInt(plants.length);
-            const randomPlant = plants[randomPlantIndex];
-            const correctAnswer = randomPlant[quizType]; // Use quizType variable
-            const imageElement = document.getElementById("image");
-            imageElement.src = randomPlant.Images[0];
+          const shuffledOptions = shuffle(options);
+          const optionsElement = document.getElementById("options");
+          optionsElement.innerHTML = "";
 
-            const options = [correctAnswer];
-            while (options.length < 4) {
-                const optionIndex = getRandomInt(plants.length);
-                const option = plants[optionIndex][quizType]; // Use quizType variable
-                if (!options.includes(option)) {
-                    options.push(option);
+          shuffledOptions.forEach((option) => {
+            const li = document.createElement("li");
+            li.textContent = option;
+            li.className = "option";
+            li.onclick = () => {
+              const answerResult = {
+                name: randomPlant[quizType],
+                correct: option === correctAnswer,
+              };
+              answerResults.push(answerResult);
+
+              if (option === correctAnswer) {
+                correctCount++;
+                li.style.backgroundColor = "green";
+                answerTracking += "🌱";
+              } else {
+                li.style.backgroundColor = "red";
+                answerTracking += "🍂";
+
+                const correctLi = Array.from(optionsElement.querySelectorAll("li")).find(item => item.textContent === correctAnswer);
+                if (correctLi) {
+                  correctLi.style.backgroundColor = "#90EE90";
                 }
-            }
+              }
+              li.style.color = "white";
 
-            const shuffledOptions = shuffle(options);
-            const optionsElement = document.getElementById("options");
-            optionsElement.innerHTML = "";
+              optionsElement.querySelectorAll("li").forEach((item) => {
+                item.onclick = null;
+                item.classList.add("disabled");
+              });
 
-            shuffledOptions.forEach((option) => {
-                const li = document.createElement("li");
-                li.textContent = option;
-                li.className = "option";
-                li.onclick = () => {
-                    // Add the correct plant name to the correctPlantNames array
-                    correctPlantNames.push(randomPlant["Common Name"]);
-                    if (option === correctAnswer) {
-                        correctCount++;
-                        li.style.backgroundColor = "green";
-                        answerTracking += "🌱"; // Add emoji for correct answers
-                    } else {
-                        li.style.backgroundColor = "red";
-                        answerTracking += "🍂"; // Add emoji for incorrect answers
-
-                        // Change the color of the correct answer
-                        const correctLi = Array.from(optionsElement.querySelectorAll("li")).find(item => item.textContent === correctAnswer);
-                        if (correctLi) {
-                            correctLi.style.backgroundColor = "#90EE90"; // Light green-gray
-                        }
-                    }
-                    li.style.color = "white";
-
-                    // Disable clicking on options and hover effect
-                    optionsElement.querySelectorAll("li").forEach((item) => {
-                        item.onclick = null;
-                        item.classList.add("disabled");
-                    });
-
-                    // Show the "Next Question" button
-                    const nextQuestionButton = document.getElementById("next-question");
-                    nextQuestionButton.style.display = "block";
-                    nextQuestionButton.classList.remove("disabled");
-
-                    // Add a newline character to answerTracking after the fifth question
-                    if (questionCount === 4) {
-                        answerTracking += "\n";
-                    }
-                };
-                optionsElement.appendChild(li);
-            });
-
-
-            // Move to the next question when the "Next Question" button is clicked
-            const nextQuestionButton = document.getElementById("next-question");
-            nextQuestionButton.onclick = () => {
-                questionCount++;
-                nextQuestionButton.style.display = "none";
-                displayQuestion();
+              const nextQuestionButton = document.getElementById("next-question");
+              nextQuestionButton.style.display = "block";
+              nextQuestionButton.classList.remove("disabled");
             };
+
+            optionsElement.appendChild(li);
+          });
         }
 
+        // Move the onclick event for the "Next Question" button outside of the displayQuestion() function
+        const nextQuestionButton = document.getElementById("next-question");
+        nextQuestionButton.onclick = () => {
+          questionCount++;
+
+          if (questionCount === 5) {
+            answerTracking += "\n";
+          }
+
+          nextQuestionButton.style.display = "none";
+          displayQuestion();
+        };
 
         const landingPage = document.getElementById("landing");
         const commonNameButton = document.getElementById("commonName");
@@ -1818,26 +1817,21 @@
 
         const shareButton = document.getElementById("share");
         shareButton.onclick = () => {
-            const asterisk = quizType === "Scientific Name" ? "*" : "";
-            const resultText = `Nativle ${correctCount}/10${asterisk}\n${answerTracking}`;
+          const asterisk = quizType === "Scientific Name" ? "*" : "";
+          const resultText = `Nativle ${correctCount}/10${asterisk}\n${answerTracking}`;
+          copyToClipboard(resultText);
 
-            navigator.clipboard.writeText(resultText)
-                .then(() => {
-                    const messageElement = document.getElementById("message");
-                    messageElement.textContent = "Results copied to clipboard!";
-                    messageElement.style.display = "block";
+          const messageElement = document.getElementById("message");
+          messageElement.textContent = "Results copied to clipboard!";
+          messageElement.style.display = "block";
 
-                    setTimeout(() => {
-                        messageElement.style.opacity = 0;
-                        setTimeout(() => {
-                            messageElement.style.display = "none";
-                            messageElement.style.opacity = 1;
-                        }, 2000);
-                    }, 2000);
-                })
-                .catch(err => {
-                    console.error('Could not copy text to clipboard:', err);
-                });
+          setTimeout(() => {
+            messageElement.style.opacity = 0;
+            setTimeout(() => {
+              messageElement.style.display = "none";
+              messageElement.style.opacity = 1;
+            }, 2000);
+          }, 2000);
         };
 
 
@@ -1851,27 +1845,20 @@
             const resultElement = document.getElementById("result");
             resultElement.textContent = `You got ${correctCount} out of 10 correct.`;
 
-            // Update the tracking element with the tracking string
             const trackingElement = document.getElementById("tracking");
-            trackingElement.innerHTML = ""; // Clear the trackingElement content
+            trackingElement.innerHTML = "";
 
-            // Loop through the answerTracking string and create a span element for each character
-            for (let i = 0; i < answerTracking.length; i++) {
-                const span = document.createElement("span");
-                span.textContent = answerTracking[i];
+            answerResults.forEach((answerResult) => {
+              const p = document.createElement("p");
+              p.textContent = answerResult.name;
+              p.style.color = answerResult.correct ? "green" : "red";
+              trackingElement.appendChild(p);
+            });
 
-                // Add a title attribute to the span element to show the correct plant name as a tooltip
-                if (i < correctPlantNames.length) {
-                    span.title = correctPlantNames[i];
-                }
-
-                // Add a line break after the fifth character
-                if (i === 4) {
-                    trackingElement.appendChild(document.createElement("br"));
-                }
-
-                trackingElement.appendChild(span);
-            }
+            const retakeButton = document.getElementById("retake");
+            retakeButton.onclick = () => {
+              location.reload();
+            };
         }
 
     </script>
