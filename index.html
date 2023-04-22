@@ -6,9 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="https://em-content.zobj.net/thumbs/320/microsoft/319/seedling_1f331.png">
     <title>Nativle - Plant Quiz</title>
+    <!-- Include the Libre Baskerville font from Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&display=swap" rel="stylesheet">
     <style>
         body {
-          font-family: "nyt-karnakcondensed","Segoe UI", "Helvetica Neue", "Arial", sans-serif;
+          font-family: "Segoe UI", "Helvetica Neue", "Arial", sans-serif;
           font-size: 18px;
           line-height: 1.6;
           color: #333;
@@ -42,7 +46,7 @@
 
         #image {
           max-width: 100%;
-          max-height: calc(100vh - 200px); /* 100vh is the full height of the viewport, minus 40px for any additional padding/margin */
+          max-height: calc(100vh - 250px); /* 100vh is the full height of the viewport, minus 40px for any additional padding/margin */
           object-fit: contain; /* Ensures the image maintains its aspect ratio */
         }
 
@@ -158,30 +162,83 @@
             display: flex; justify-content: center; align-items: center; text-align: center;
           }
         }
+        /* Style the top bar */
+        .top-bar {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: auto;
+          background-color: #f7f7f7;
+          padding: 10px 0; /* Add 10px padding to the top and bottom */
+          box-shadow: 0px 0px 2px gray; /* Remove the box-shadow */
+          border-bottom: 1px solid #ccc; /* Add a thin gray line at the bottom */
+          display: flex;
+          flex-direction: column; /* Change to column layout */
+          align-items: center;
+          justify-content: center;
+          z-index: 1000;
+        }
+
+        /* Style the text inside the top bar */
+        .top-bar h1 {
+          font-family: 'Libre Baskerville', serif;
+          font-size: 40px;
+          color: #333;
+          margin: 0;
+          padding: 0;
+        }
+
+        h2 {
+          font-family: 'Libre Baskerville', serif;
+          font-size: 24px;
+          color: #333;
+          margin-bottom: 10px;
+          padding: 0;
+        }
+
+        .top-bar h3 {
+          font-family: 'Libre Baskerville', serif;
+          font-size: 14px;
+          color: #333;
+          margin: -5px 0 0;
+          padding: 0;
+        }
+        /* Add margin-top to the main content */
+        .main-content {
+          margin-top: 80px; /* Adjust this value based on the height of your top bar */
+        }
     </style>
 
 </head>
 <body>
-    <div id="landing">
-        <h2>Choose your quiz type:</h2>
-        <button id="commonName">Common Name</button>
-        <button id="scientificName">Scientific Name</button>
+    <div class="top-bar">
+        <h1>Nativle</h1>
+        <br>
+        <h3>A native plant guessing game</h3>
     </div>
-    <div id="quiz" style="display: none;">
-        <ul id="options"></ul>
-        <button id="next-question" style="display: none;">Next Question</button>
-        <div id="image-container">
-          <img id="image" alt="Random plant image" style="max-width: 100%;">
-        </div>
-    </div>
-    <div id="results" style="display: none;">
-        <p id="result"></p>
-        <p id="tracking"></p>
-        <div class="button-wrapper">
-          <div id="message" class="message"></div>
-          <button id="share">Share Results</button>
-          <button id="retake">Retake Quiz</button>
-        </div>
+    <div class="main-content">
+      <div id="landing">
+          <h2>Choose your quiz type:</h2>
+          <button id="commonName">Common Name</button>
+          <button id="scientificName">Scientific Name</button>
+      </div>
+      <div id="quiz" style="display: none;">
+          <ul id="options"></ul>
+          <button id="next-question" style="display: none;">Next Question</button>
+          <div id="image-container">
+            <img id="image" alt="Random plant image" style="max-width: 100%;">
+          </div>
+      </div>
+      <div id="results" style="display: none;">
+          <p id="result"></p>
+          <p id="tracking"></p>
+          <div class="button-wrapper">
+            <div id="message" class="message"></div>
+            <button id="share">Share Results</button>
+            <button id="retake">Retake Quiz</button>
+          </div>
+      </div>
     </div>
     <script>
         const quizElement = document.getElementById("quiz");
