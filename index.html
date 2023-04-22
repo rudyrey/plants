@@ -8,13 +8,13 @@
     <title>Nativle - Plant Quiz</title>
     <style>
         body {
-          font-family: "Segoe UI", "Helvetica Neue", "Arial", sans-serif;
+          font-family: "nyt-karnakcondensed","Segoe UI", "Helvetica Neue", "Arial", sans-serif;
           font-size: 18px;
           line-height: 1.6;
           color: #333;
           margin: 0;
           padding: 0;
-          background-color: #f7f7f7;
+          background-color: #f0f0f0;
         }
 
         h1 {
@@ -42,11 +42,13 @@
 
         #image {
           max-width: 100%;
+          max-height: calc(100vh - 200px); /* 100vh is the full height of the viewport, minus 40px for any additional padding/margin */
+          object-fit: contain; /* Ensures the image maintains its aspect ratio */
         }
 
         img {
           margin-bottom: 20px;
-          border-radius: 5px;
+          border-radius: 0px;
         }
 
         ul {
@@ -60,15 +62,15 @@
         li {
           padding: 10px 20px;
           margin: 5px;
-          background-color: #007BFF;
-          border-radius: 5px;
+          background-color: #89CFF0;
+          border-radius: 0px;
           cursor: pointer;
-          color: white;
+          color: #333;
           transition: background-color 0.3s ease;
         }
 
         li:hover {
-          background-color: #0056b3;
+          background-color: #72A9C0;
         }
 
         p {
@@ -88,16 +90,16 @@
           font-size: 18px;
           padding: 10px 20px;
           border: none;
-          border-radius: 5px;
-          background-color: #007BFF;
-          color: white;
+          border-radius: 0px;
+          background-color: #89CFF0;
+          color: #333;
           cursor: pointer;
           margin: 5px;
           transition: background-color 0.3s ease;
         }
 
         button:hover {
-          background-color: #0056b3;
+          background-color: #72A9C0;
         }
 
         .option {
@@ -105,7 +107,7 @@
         }
 
         .option:hover {
-            background-color: #0056b3;
+            background-color: #72A9C0;
         }
 
         .disabled {
@@ -138,11 +140,26 @@
             background-color: rgba(0, 0, 0, 0.8);
             color: white;
             padding: 10px;
-            border-radius: 5px;
+            border-radius: 0px;
             font-size: 14px;
             display: none;
         }
-      </style>
+        @media (max-width: 767px) {
+          ul {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px; /* Adjust the value according to your desired gap size */
+            max-width: 300px; /* Adjust the value according to your desired maximum width */
+            margin-left: auto;
+            margin-right: auto;
+          }
+
+          li {
+            display: flex; justify-content: center; align-items: center; align-text: center;
+          }
+        }
+    </style>
+
 </head>
 <body>
     <div id="landing">
