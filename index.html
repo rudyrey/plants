@@ -38,10 +38,22 @@
           display: none;
         }
 
-        #image-container {
-          display: flex;
-          justify-content: center;
-          align-items: center;
+        /* Add new styles for the image container and button */
+        .image-container {
+          position: relative;
+          display: inline-block;
+        }
+
+        .next-question {
+          position: absolute;
+          bottom: 10px;
+          right: 10px;
+          background-color: rgba(0, 0, 0, 0.7);
+          color: #fff;
+          padding: 5px 10px;
+          border-radius: 5px;
+          cursor: pointer;
+          display: none;
         }
 
         #image {
