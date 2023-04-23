@@ -3810,7 +3810,7 @@
         const shareButton = document.getElementById("share");
         shareButton.onclick = () => {
           const asterisk = quizType === "Scientific Name" ? "*" : "";
-          const resultText = `Nativle ${correctCount}/10${asterisk}\nhttps://bit.ly/nativle\n${answerTracking}`;
+          const resultText = `Nativle ${correctCount}/10${asterisk}\nbit.ly/nativle\n${answerTracking}`;
           copyToClipboard(resultText);
 
           const messageElement = document.getElementById("message");
