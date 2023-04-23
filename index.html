@@ -26,7 +26,6 @@
           margin-bottom: 10px;
           text-align: center;
         }
-
         #landing, #quiz, #results {
           display: flex;
           flex-direction: column;
@@ -39,6 +38,7 @@
         }
 
         #image-container {
+          position: relative;
           display: flex;
           justify-content: center;
           align-items: center;
@@ -124,14 +124,22 @@
         }
 
         #next-question {
-            display: none;
-            margin: 20px auto;
-            padding: 10px 20px;
-            background-color: #808080;
-            color: white;
-            cursor: pointer;
+          position: absolute;
+          display: none;
+          padding: 10px 20px;
+          background-color: #808080;
+          color: white;
+          cursor: pointer;
+          top: 200px;
+          left: 50%;
+          transform: translate(-50%, -50%);
         }
-
+        #next-question span {
+          font-weight: bold;
+          background-color: rgba(128, 128, 128, 0.8);
+          padding: 10px 20px;
+          border-radius: 0px;
+        }
         #next-question:hover {
             background-color: #696969;
         }
