@@ -93,6 +93,32 @@ button {
   transition: background-color 0.3s ease;
 }
 
+.quiz ul {
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.quiz li {
+  padding: 10px 20px;
+  margin: 5px;
+  background-color: #89CFF0;
+  border-radius: 0px;
+  cursor: pointer;
+  color: #333;
+  transition: background-color 0.3s ease;
+}
+
+.quiz li:hover {
+  background-color: #72A9C0;
+}
+
+p {
+  text-align: center;
+}
+
 .share-wrapper button:hover {
   background-color: #72A9C0;
 }
