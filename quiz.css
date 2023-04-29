@@ -96,9 +96,14 @@ button {
 #quiz ul {
   padding: 0;
   list-style-type: none;
-  display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px; /* Adjust the value according to your desired gap size */
+  max-width: 300px; /* Adjust the value according to your desired maximum width */
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #quiz li {
@@ -109,6 +114,11 @@ button {
   cursor: pointer;
   color: #333;
   transition: background-color 0.3s ease;
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  text-align: center;
+  }
 }
 
 #quiz li:hover {
@@ -174,18 +184,6 @@ p {
     display: none;
 }
 @media (max-width: 767px) {
-  #quiz ul {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px; /* Adjust the value according to your desired gap size */
-    max-width: 300px; /* Adjust the value according to your desired maximum width */
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  #quiz li {
-    display: flex; justify-content: center; align-items: center; text-align: center;
-  }
   .top-bar h3 {
     margin-top: 3px; /* Reduce the margin-top of h3 */
   }
