@@ -101,7 +101,7 @@ button {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 10px; /* Adjust the value according to your desired gap size */
-  max-width: 300px; /* Adjust the value according to your desired maximum width */
+  max-width: 350px; /* Adjust the value according to your desired maximum width */
   margin-left: auto;
   margin-right: auto;
 }
