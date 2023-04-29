@@ -93,7 +93,7 @@ button {
   transition: background-color 0.3s ease;
 }
 
-.quiz ul {
+#quiz ul {
   padding: 0;
   list-style-type: none;
   display: flex;
@@ -101,7 +101,7 @@ button {
   justify-content: center;
 }
 
-.quiz li {
+#quiz li {
   padding: 10px 20px;
   margin: 5px;
   background-color: #89CFF0;
@@ -111,7 +111,7 @@ button {
   transition: background-color 0.3s ease;
 }
 
-.quiz li:hover {
+#quiz li:hover {
   background-color: #72A9C0;
 }
 
