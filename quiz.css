@@ -174,7 +174,7 @@ p {
     display: none;
 }
 @media (max-width: 767px) {
-  ul {
+  #quiz ul {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 10px; /* Adjust the value according to your desired gap size */
@@ -183,7 +183,7 @@ p {
     margin-right: auto;
   }
 
-  li {
+  #quiz li {
     display: flex; justify-content: center; align-items: center; text-align: center;
   }
   .top-bar h3 {
