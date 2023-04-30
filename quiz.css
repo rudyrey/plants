@@ -240,21 +240,25 @@ p {
 }
 
 .state-menu ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px; /* Adjust the value according to your desired gap size */
+    max-width: 300px; /* Adjust the value according to your desired maximum width */
+    margin-left: auto;
+    margin-right: auto;
   padding: 0;
   list-style-type: none;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
 }
 
 .state-menu li {
-  padding: 10px 20px;
-  margin: 5px;
-  background-color: #89CFF0;
-  border-radius: 0px;
+  justify-content: center; 
+  align-items: center; 
+  text-align: center;
+  padding: 5px 5px;
+  margin: 0px;
+  border-radius: 1px;
   cursor: pointer;
   color: #333;
-  transition: background-color 0.3s ease;
 }
 
 .state-menu li:hover {
