@@ -232,24 +232,24 @@ p {
   padding: 0;
 }
 
-#state-menu {
+.state-menu {
   height: calc(100vh - 100px); /* Adjust the height to fill the rest of the screen */
   overflow-y: scroll; /* Add a scrollbar if necessary */
 }
 
-#state-menu ul {
+.state-menu ul {
   list-style-type: none;
   padding: 0;
 }
 
-#state-menu li {
+.state-menu li {
   padding: 10px;
   text-align: center;
   border-bottom: 1px solid #ccc;
   cursor: pointer;
 }
 
-#state-menu li:hover {
+.state-menu li:hover {
   background-color: #f0f0f0;
 }
 
