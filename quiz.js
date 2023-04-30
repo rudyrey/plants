@@ -169,9 +169,6 @@ function displayResult() {
   
   const resultsElement = document.getElementById("results");
   resultsElement.style.display = "block";
-
-  const resultElement = document.getElementById("result");
-  resultElement.textContent = `You got ${correctCount} out of 10 correct.`;
   
   const trackingElement = document.getElementById("tracking");
   trackingElement.innerHTML = "";
