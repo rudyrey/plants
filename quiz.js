@@ -40,7 +40,7 @@ function displayQuestion() {
   const randomCommonNameIndex = getRandomInt(randomPlant["Common Name"].length);
   const correctAnswer = quizType === "Common Name" ? randomPlant["Common Name"][randomCommonNameIndex] : randomPlant["Scientific Name"];
   const imageElement = document.getElementById("image");
-  imageElement.src = randomPlant.Images[getRandomInt(randomPlant.Images.length)];
+  displayImages(randomPlant.Images);
 
   // Remove the selected plant from the plants array
   plants.splice(randomPlantIndex, 1);
@@ -166,10 +166,10 @@ shareButton.onclick = () => {
 function displayResult() {
   const quizElement = document.getElementById("quiz");
   quizElement.style.display = "none";
-  
+
   const resultsElement = document.getElementById("results");
   resultsElement.style.display = "block";
-  
+
   const trackingElement = document.getElementById("tracking");
   trackingElement.innerHTML = "";
 
@@ -228,6 +228,25 @@ retakeButton.onclick = () => {
   // Start the quiz again with the same settings
   displayQuestion();
 };
+
+function displayImages(images) {
+  const imageContainer = document.getElementById("images"); // Change this line
+
+  // Remove existing images from the container
+  imageContainer.innerHTML = "";
+
+  // Add the new images
+  images.forEach((imageUrl) => {
+    const img = document.createElement("img");
+    img.src = imageUrl;
+    img.alt = "Plant image";
+    img.style.maxWidth = "100%";
+    img.style.height = "auto";
+    img.style.marginRight = "5px";
+
+    imageContainer.appendChild(img);
+  });
+}
 
 function getStateFromUrl() {
   const urlParams = new URLSearchParams(window.location.search);

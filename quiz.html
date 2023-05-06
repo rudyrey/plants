@@ -15,10 +15,9 @@
 <body>
   <div class="top-bar">
     <h1 id="title">Nativle</h1>
-    <br>
     <h3>a native plant quiz game</h3>
   </div>
-  
+
   <div class="main-content">
     <div id="landing">
       <h2>Choose your quiz type:</h2>
@@ -27,23 +26,29 @@
     </div>
     <div id="quiz" style="display: none;">
       <ul id="options"></ul>
-      <div id="image-container">
-        <img id="image" alt="Random plant image" style="max-width: 100%;">
+      <div class="next-questions">
+        <button id="next-question" style="display: none;">Next Question</button>
       </div>
-      <button id="next-question" style="display: none;">Next Question</button>
+      <div id="image-container">
+        <div id="images">
+          <div class="image-scroll-container">
+            <img id="image" alt="Plant image" style="max-width: 100%; height: auto; margin-right: 5px;">
+          </div>
+        </div>
+      </div>
     </div>
     <div id="results" style="display: none;">
       <p id="result"></p>
       <div id="tracking-container">
         <div id="tracking"></div>
       </div>
-      <div class="button-wrapper">
+      <div class="button-wrapper" id="retake-buttons" style="display: flex;">
         <button id="retake">Retake Quiz</button>
         <button id="restart">Restart</button>
       </div>
-      <div class="share-wrapper">
+      <div class="share-wrapper" id="share-button" style="display: flex;">
         <div id="message" class="message"></div>
-        <button id="share">Share Results</button
+        <button id="share">Share Results</button>
       </div>
     </div>
   </div>
