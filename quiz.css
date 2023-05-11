@@ -12,7 +12,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px;
+  padding: 10px;
 }
 
 #quiz, #results {
@@ -96,6 +96,7 @@ button {
 
 ul {
   padding: 0;
+  margin: 0;
   list-style-type: none;
   display: flex;
   flex-wrap: wrap;
@@ -146,12 +147,6 @@ p {
   background-color: #808080;
   color: white;
   cursor: pointer;
-}
-#next-question span {
-  font-weight: bold;
-  background-color: rgba(128, 128, 128, 0.8);
-  padding: 10px 20px;
-  border-radius: 0px;
 }
 #next-question:hover {
     background-color: #696969;
@@ -204,7 +199,7 @@ p {
 }
 .next-questions {
   width: 100%;
-  height: 50px; /* Adjust the height as per your requirements */
+  height: 60px; /* Adjust the height as per your requirements */
   display: flex;
   justify-content: center;
   align-items: center;
