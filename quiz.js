@@ -148,11 +148,7 @@ shareButton.onclick = () => {
   const state = getStateFromUrl();
   const asterisk = quizType === "Scientific Name" ? "*" : "";
   const resultText = `Nativle ${state} ${correctCount}/10${asterisk}\nbit.ly/nativle\n${answerTracking}`;
-  copyToClipboard(resultText);
-
   const messageElement = document.getElementById("message");
-  messageElement.textContent = "Results copied to clipboard!";
-  messageElement.style.display = "block";
 
   if (navigator.share) {
     navigator.share({
