@@ -154,6 +154,15 @@ shareButton.onclick = () => {
   messageElement.textContent = "Results copied to clipboard!";
   messageElement.style.display = "block";
 
+  if (navigator.share) {
+    navigator.share({
+      title: 'Nativle Quiz Results',
+      text: resultText,
+      url: 'https://www.example.com', // replace with your url
+    }).then(() => console.log('Successful share'))
+      .catch((error) => console.log('Error sharing', error));
+  }
+
   setTimeout(() => {
     messageElement.style.opacity = 0;
     setTimeout(() => {
@@ -162,6 +171,7 @@ shareButton.onclick = () => {
     }, 2000);
   }, 2000);
 };
+
 
 function displayResult() {
   const quizElement = document.getElementById("quiz");
