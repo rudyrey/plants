@@ -144,13 +144,15 @@ function copyToClipboard(text) {
 }
 
 const shareButton = document.getElementById("share");
-
 shareButton.onclick = () => {
   const state = getStateFromUrl();
   const asterisk = quizType === "Scientific Name" ? "*" : "";
   const resultText = `Nativle ${state} ${correctCount}/10${asterisk}\nbit.ly/nativle\n${answerTracking}`;
-  
+  copyToClipboard(resultText);
+
   const messageElement = document.getElementById("message");
+  messageElement.textContent = "Results copied to clipboard!";
+  messageElement.style.display = "block";
 
   if (navigator.share) {
     navigator.share({
@@ -163,16 +165,17 @@ shareButton.onclick = () => {
     copyToClipboard(resultText);
     messageElement.textContent = "Results copied to clipboard!";
     messageElement.style.display = "block";
-
-    setTimeout(() => {
-      messageElement.style.opacity = 0;
-      setTimeout(() => {
-        messageElement.style.display = "none";
-        messageElement.style.opacity = 1;
-      }, 2000);
-    }, 2000);
   }
+
+  setTimeout(() => {
+    messageElement.style.opacity = 0;
+    setTimeout(() => {
+      messageElement.style.display = "none";
+      messageElement.style.opacity = 1;
+    }, 2000);
+  }, 2000);
 };
+
 
 function displayResult() {
   const quizElement = document.getElementById("quiz");
