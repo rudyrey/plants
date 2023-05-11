@@ -144,24 +144,36 @@ function copyToClipboard(text) {
 }
 
 const shareButton = document.getElementById("share");
+
 shareButton.onclick = () => {
   const state = getStateFromUrl();
   const asterisk = quizType === "Scientific Name" ? "*" : "";
   const resultText = `Nativle ${state} ${correctCount}/10${asterisk}\nbit.ly/nativle\n${answerTracking}`;
-  copyToClipboard(resultText);
-
+  
   const messageElement = document.getElementById("message");
-  messageElement.textContent = "Results copied to clipboard!";
-  messageElement.style.display = "block";
 
   if (navigator.share) {
     navigator.share({
       title: 'Nativle Quiz Results',
       text: resultText,
-      url: 'https://www.example.com', // replace with your url
     }).then(() => console.log('Successful share'))
       .catch((error) => console.log('Error sharing', error));
+  } else {
+    // If Web Share API is not available, copy to clipboard and show the message
+    copyToClipboard(resultText);
+    messageElement.textContent = "Results copied to clipboard!";
+    messageElement.style.display = "block";
+
+    setTimeout(() => {
+      messageElement.style.opacity = 0;
+      setTimeout(() => {
+        messageElement.style.display = "none";
+        messageElement.style.opacity = 1;
+      }, 2000);
+    }, 2000);
   }
+};
+
 
   setTimeout(() => {
     messageElement.style.opacity = 0;
