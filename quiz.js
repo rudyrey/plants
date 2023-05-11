@@ -161,16 +161,17 @@ shareButton.onclick = () => {
     copyToClipboard(resultText);
     messageElement.textContent = "Results copied to clipboard!";
     messageElement.style.display = "block";
-  }
 
-  setTimeout(() => {
-    messageElement.style.opacity = 0;
     setTimeout(() => {
-      messageElement.style.display = "none";
-      messageElement.style.opacity = 1;
+      messageElement.style.opacity = 0;
+      setTimeout(() => {
+        messageElement.style.display = "none";
+        messageElement.style.opacity = 1;
+      }, 2000);
     }, 2000);
-  }, 2000);
+  }
 };
+
 
 
 function displayResult() {
