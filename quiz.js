@@ -174,17 +174,6 @@ shareButton.onclick = () => {
   }
 };
 
-
-  setTimeout(() => {
-    messageElement.style.opacity = 0;
-    setTimeout(() => {
-      messageElement.style.display = "none";
-      messageElement.style.opacity = 1;
-    }, 2000);
-  }, 2000);
-};
-
-
 function displayResult() {
   const quizElement = document.getElementById("quiz");
   quizElement.style.display = "none";
