@@ -376,7 +376,6 @@ export const jsonData = {
         "https://s3.amazonaws.com/eit-planttoolbox-prod/media/images/Antennaria_plantaginifolia_Fritz_Flohr_Reynolds_ccbysa2.0.jpg",
         "https://s3.amazonaws.com/eit-planttoolbox-prod/media/images/Antennaria_plantaginifolia_Chris_Evans_University_of_Illinois_Bugwood.org_ccbync3.0.jpg",
         "https://s3.amazonaws.com/eit-planttoolbox-prod/media/images/Antennaria_plantagin_B5Kr04Fh0yxN.jfif",
-        "https://s3.amazonaws.com/eit-planttoolbox-prod/media/images/antennaria__plantaginifolia_spring_susan_strine_ccby20.jfif",
         "https://s3.amazonaws.com/eit-planttoolbox-prod/media/images/Antennaria_plantagin_KusIPrsgZyY0.jpg",
         "https://s3.amazonaws.com/eit-planttoolbox-prod/media/images/Antennaria-plantagin_JLjNdJq2c329.jpg",
         "https://s3.amazonaws.com/eit-planttoolbox-prod/media/images/Antennaria-plantagin_hk21FvZCVZ8j.jpg",
@@ -403,7 +402,6 @@ export const jsonData = {
         "https://s3.amazonaws.com/eit-planttoolbox-prod/media/images/Medicago_lupulina-fl_e6RNbi9PDmb3.jpe",
         "https://s3.amazonaws.com/eit-planttoolbox-prod/media/images/Medicago_Lupulina-Fo_nYfPCYnIbHgf.jpe",
         "https://s3.amazonaws.com/eit-planttoolbox-prod/media/images/Medicago_lupulina_se_QtDB2IKzVKpa.jpe",
-        "https://s3.amazonaws.com/eit-planttoolbox-prod/media/images/Medicago_lupulina-il_gE5H8NRikCmQ.jpe",
         "https://s3.amazonaws.com/eit-planttoolbox-prod/media/images/Medicago_lupulina-se_6OJc4GfIM1Ag.jpe"
       ],
       "Native": {
@@ -916,7 +914,6 @@ export const jsonData = {
       ],
       "Scientific Name": "Alchemilla mollis",
       "Images": [
-        "https://s3.amazonaws.com/eit-planttoolbox-prod/media/images/Alchemilla_mollis_leavesM_Martin_Vincentcc_by_20_13130285623_m.jpg",
         "https://s3.amazonaws.com/eit-planttoolbox-prod/media/images/Alchemilla_mollisKingsbrae_Gardenscc_byncsa_20_13130159555_m.jpg",
         "https://s3.amazonaws.com/eit-planttoolbox-prod/media/images/Alchemilla_mollis_Sa_rkD7mgCA7jE1.jpe",
         "https://s3.amazonaws.com/eit-planttoolbox-prod/media/images/Alchemilla_mollis_03_wWFd9jtnNLIS.jpe",
@@ -1627,7 +1624,6 @@ export const jsonData = {
         "https://www.gardenia.net/storage/app/public/uploads/images/detail/74XO2mlBTy6o8x9aSzDxknFRN21fw5WnyOBD7Im0.webp",
         "https://www.gardenia.net/storage/app/public/uploads/images/detail/yv1NnjjohjfZZ5EaFOhBUb7N8O08MVlttmkL7SXg.webp",
         "https://www.gardenia.net/storage/app/public/uploads/images/detail/p0dE1u9BEh0C7EFkthDwQBTovh0QlOUv3G90LXsT.webp",
-        "https://s3.amazonaws.com/eit-planttoolbox-prod/media/images/Schizachyrium_scoparium_Montrealais_ccbysa30.jpg",
         "https://s3.amazonaws.com/eit-planttoolbox-prod/media/images/schizachyrium_scoparium_Joshua_Mayer_ccbysa20.jpg",
         "https://s3.amazonaws.com/eit-planttoolbox-prod/media/images/schizachyrium_scoparium_fall_Tom_Potterfield_ccbyncsa20.jpg",
         "https://s3.amazonaws.com/eit-planttoolbox-prod/media/images/DSCN5579.jpeg",
@@ -3601,7 +3597,6 @@ export const jsonData = {
         "https://www.gardenia.net/storage/app/public/uploads/images/detail/pAHeD4jvLy9MK3iZi7eoloHspZ6N7pXK3iNtie5N.webp",
         "https://www.gardenia.net/storage/app/public/uploads/images/detail/VbF0fZUmRXGrcK1Fcg1lH0YXJdvTy7vYYUdCsk1B.webp",
         "https://s3.amazonaws.com/eit-planttoolbox-prod/media/images/Thalia-dealbata--Joy-Weese-Moll--CC-BY-NC.jpg",
-        "https://s3.amazonaws.com/eit-planttoolbox-prod/media/images/Thalia_dealbata_KATH_rEScDtpmMTUq.jpg",
         "https://s3.amazonaws.com/eit-planttoolbox-prod/media/images/Thalia-dealbata-1--Lip-Kee--CC-BY-SA.jpg",
         "https://s3.amazonaws.com/eit-planttoolbox-prod/media/images/Thalia-dealbata--jennyhsu47--CC-BY-NC-SA.jpg",
         "https://s3.amazonaws.com/eit-planttoolbox-prod/media/images/Thalia-dealbata--Anne-McCormack--CC-BY-NC.jpg",
@@ -3609,7 +3604,6 @@ export const jsonData = {
         "https://s3.amazonaws.com/eit-planttoolbox-prod/media/images/Thalia_dealbata_2_Da_xtrGdXHNhMuR.jpg",
         "https://s3.amazonaws.com/eit-planttoolbox-prod/media/images/Thalia_dealbata_2_Mi_JJedACwTJZ3u.jpg",
         "https://s3.amazonaws.com/eit-planttoolbox-prod/media/images/Thalia_dealbata_Davi_AbXHsvKWcYt5.jpg",
-        "https://s3.amazonaws.com/eit-planttoolbox-prod/media/images/Thalia_dealbata_Matt_HX1qhbKbRzUi.jpg",
         "https://s3.amazonaws.com/eit-planttoolbox-prod/media/images/Thalia_dealbata_Deni_rqSvx1NVMCy5.jpeg",
         "https://s3.amazonaws.com/eit-planttoolbox-prod/media/images/Thalia_dealbata_Krzy_jK488SHN7Lw9.jpeg",
         "https://s3.amazonaws.com/eit-planttoolbox-prod/media/images/Thalia_dealbata_Lip__HOHOP78tAjHz.jpeg",
@@ -3698,7 +3692,6 @@ export const jsonData = {
         "https://s3.amazonaws.com/eit-planttoolbox-prod/media/images/Persea_borbonia_fm_1_m97YDeDcdg8D.jpeg",
         "https://s3.amazonaws.com/eit-planttoolbox-prod/media/images/Persea_borbonia_lffr_M6nsTSuFk7b8.jpeg",
         "https://s3.amazonaws.com/eit-planttoolbox-prod/media/images/Persea_borbonia_2_Da_43HsJFiaDKmk.jpeg",
-        "https://s3.amazonaws.com/eit-planttoolbox-prod/media/images/Persea_borbonia_Dade_48pt2gcqC2XL.jpeg",
         "https://s3.amazonaws.com/eit-planttoolbox-prod/media/images/Persea_borbonia_Davi_KVoEorHaK7xx.jpeg"
       ],
       "Native": {
@@ -4915,7 +4908,6 @@ export const jsonData = {
         "https://s3.amazonaws.com/eit-planttoolbox-prod/media/images/Echinacea_purpura__d_tBUaY2G75DPr.jpeg",
         "https://s3.amazonaws.com/eit-planttoolbox-prod/media/images/Echinacea_purpurea_A_Wey4L9KfWQSI.jpe",
         "https://s3.amazonaws.com/eit-planttoolbox-prod/media/images/Echinacea-purpurea-F_ZbSj34z0Bpc0.jpeg",
-        "https://s3.amazonaws.com/eit-planttoolbox-prod/media/images/Echinacea_purpurea_G_4XQTWY5Mjpln.jpe",
         "https://s3.amazonaws.com/eit-planttoolbox-prod/media/images/Echinacea-purpurea-H_1OHelLb3Adpw.jpe",
         "https://s3.amazonaws.com/eit-planttoolbox-prod/media/images/Echinacea-Hot-Papaya_ih8l4qqumCvx.jpeg",
         "https://s3.amazonaws.com/eit-planttoolbox-prod/media/images/Echinacea-purpurea--_IIrhKhImX3Kk.jpe",
@@ -4926,8 +4918,7 @@ export const jsonData = {
         "https://s3.amazonaws.com/eit-planttoolbox-prod/media/images/Echinacea_purpurea_S_ARJsVTdcHGZQ.jpg",
         "https://s3.amazonaws.com/eit-planttoolbox-prod/media/images/Echinacea-purpurea-_OrD3sDVl9I9i.jpeg",
         "https://s3.amazonaws.com/eit-planttoolbox-prod/media/images/Echinacea-purpurea-_MSzRerQynSLa.jpeg",
-        "https://s3.amazonaws.com/eit-planttoolbox-prod/media/images/Echinacea-purpurea-_JqJFYEqEWDft.jpe",
-        "https://s3.amazonaws.com/eit-planttoolbox-prod/media/images/Echinacea-Kismet-Ral_zy3AcFd5rubj.jpeg"
+        "https://s3.amazonaws.com/eit-planttoolbox-prod/media/images/Echinacea-purpurea-_JqJFYEqEWDft.jpe"
       ],
       "Native": {
         "Native": "AL AR CO CT FL GA IL IN IA KS KY LA MD MA MS MO NE NJ NY NC OH OK PA SC TN TX VT VA WV WI",
@@ -5626,7 +5617,6 @@ export const jsonData = {
         "https://s3.amazonaws.com/eit-planttoolbox-prod/media/images/Juniperus_virginiana_m0rTMOjTNwSt.jpg",
         "https://s3.amazonaws.com/eit-planttoolbox-prod/media/images/Juniperus_virginiana_lDefLKJaffYI.jpg",
         "https://s3.amazonaws.com/eit-planttoolbox-prod/media/images/Juniperus_virginiana_dsg4pwtl8S5M.jpeg",
-        "https://s3.amazonaws.com/eit-planttoolbox-prod/media/images/Juniperus_virginiana_O4ProuwyYtWI.jpeg",
         "https://s3.amazonaws.com/eit-planttoolbox-prod/media/images/Juniperus_virginiana_igWB7hXw5jE0.jpe",
         "https://s3.amazonaws.com/eit-planttoolbox-prod/media/images/Juniperus_virginiana_3s5RWNkbNtf2.jfif",
         "https://s3.amazonaws.com/eit-planttoolbox-prod/media/images/Juniperus_virginiana_j46jJ1GwMPbk.jpe",
@@ -5721,7 +5711,6 @@ export const jsonData = {
         "https://s3.amazonaws.com/eit-planttoolbox-prod/media/images/Hydrangea-arborescen_bo88rWGga2VV.png",
         "https://s3.amazonaws.com/eit-planttoolbox-prod/media/images/Hydrangea-aborescens_HWgLaubjnpv5.jpeg",
         "https://s3.amazonaws.com/eit-planttoolbox-prod/media/images/Hydrangea-aborescens_NqBat7FvHNYa.jpeg",
-        "https://s3.amazonaws.com/eit-planttoolbox-prod/media/images/Hydrangea-arborescen_COwBcaX39H9r.jpeg",
         "https://s3.amazonaws.com/eit-planttoolbox-prod/media/images/Hydrangea-arborescen_ox670lqSPap9.jpeg"
       ],
       "Native": {
@@ -6942,7 +6931,6 @@ export const jsonData = {
         "https://s3.amazonaws.com/eit-planttoolbox-prod/media/images/Teucrium_chamaedrys__diwdtzqiiCA0.jpeg",
         "https://s3.amazonaws.com/eit-planttoolbox-prod/media/images/Teucrium_chamaedrys__6NmcyrDl5HCt.jpeg",
         "https://s3.amazonaws.com/eit-planttoolbox-prod/media/images/Teucrium_chamaedrys__qox9LA78cAIt.jpeg",
-        "https://s3.amazonaws.com/eit-planttoolbox-prod/media/images/Teucrium_chamaedrys__UvTfjBi5IVKL.jpeg",
         "https://s3.amazonaws.com/eit-planttoolbox-prod/media/images/Teucrium_chamaedrys__QhB0LaadvQi6.jpeg",
         "https://s3.amazonaws.com/eit-planttoolbox-prod/media/images/Teucrium_chamaedrys__QH4xFR4BqLOm.jpeg"
       ],
