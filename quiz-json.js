@@ -2,8 +2,7 @@ export const jsonData = {
   "plants": [
     {
       "Common Name": [
-        "Palm Sedge",
-        "Sedges"
+        "Palm Sedge"
       ],
       "Scientific Name": "Carex muskingumensis",
       "Images": [
@@ -178,8 +177,7 @@ export const jsonData = {
     {
       "Common Name": [
         "Spreading Sedge",
-        "Glaucous Woodland Sedge",
-        "Sedges"
+        "Glaucous Woodland Sedge"
       ],
       "Scientific Name": "Carex laxiculmis",
       "Images": [
@@ -7700,8 +7698,7 @@ export const jsonData = {
       "Common Name": [
         "Blue Wood Sedge",
         "Meadow Sedge",
-        "Thinfruit Sedge",
-        "Sedges"
+        "Thinfruit Sedge"
       ],
       "Scientific Name": "Carex flaccosperma",
       "Images": [
@@ -18896,10 +18893,8 @@ export const jsonData = {
         "Pennsylvania Sedge",
         "Plantainleaf Sedge",
         "Rush",
-        "Sedge",
         "Oak Sedge",
-        "Seersucker Sedge",
-        "Sedges"
+        "Seersucker Sedge"
       ],
       "Scientific Name": "Carex pensylvanica",
       "Images": [
@@ -30238,8 +30233,7 @@ export const jsonData = {
         "Plantain-leafed Sedge",
         "Plantain-Leaf Sedge",
         "Broad-leafed Sedge",
-        "Seersucker Sedge",
-        "Sedges"
+        "Seersucker Sedge"
       ],
       "Scientific Name": "Carex plantaginea",
       "Images": [
@@ -30338,8 +30332,7 @@ export const jsonData = {
     {
       "Common Name": [
         "Broad Leaf Sedge",
-        "Silver Sedge",
-        "Sedges"
+        "Silver Sedge"
       ],
       "Scientific Name": "Carex platyphylla",
       "Images": [
@@ -31447,8 +31440,7 @@ export const jsonData = {
     },
     {
       "Common Name": [
-        "Southern Waxy Sedge",
-        "Sedges",
+        "Southern Waxy Sedge"
         "Blue Sedge"
       ],
       "Scientific Name": "Carex glaucescens",
@@ -39403,8 +39395,7 @@ export const jsonData = {
     },
     {
       "Common Name": [
-        "Hop Sedge",
-        "Sedges"
+        "Hop Sedge"
       ],
       "Scientific Name": "Carex lupulina",
       "Images": [
@@ -58991,8 +58982,7 @@ export const jsonData = {
     },
     {
       "Common Name": [
-        "Cherokee Sedge",
-        "Sedges"
+        "Cherokee Sedge"
       ],
       "Scientific Name": "Carex cherokeensis",
       "Images": [
@@ -61839,9 +61829,8 @@ export const jsonData = {
     {
       "Common Name": [
         "Asa Gray's Sedge",
-        "Gray\u2019s Sedge",
-        "Mace Sedge",
-        "Sedges"
+        "Gray's Sedge",
+        "Mace Sedge"
       ],
       "Scientific Name": "Carex grayi",
       "Images": [
