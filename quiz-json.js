@@ -2623,7 +2623,6 @@ export const jsonData = {
     {
       "Common Name": [
         "Dwarf Chinquapin Oak",
-        "Oaks",
         "Dwarf Chestnut Oak"
       ],
       "Scientific Name": "Quercus prinoides",
@@ -3457,7 +3456,6 @@ export const jsonData = {
         "Eastern Red Oak",
         "American Red Oak",
         "Northern Red Oak",
-        "Oaks",
         "Red Oak"
       ],
       "Scientific Name": "Quercus rubra",
@@ -4339,7 +4337,6 @@ export const jsonData = {
         "Punk Oak",
         "Black Oak",
         "Water Oak",
-        "Oaks",
         "Duck Oak"
       ],
       "Scientific Name": "Quercus nigra",
@@ -7151,8 +7148,7 @@ export const jsonData = {
     {
       "Common Name": [
         "Bastard White Oak",
-        "Bluff Oak",
-        "Oaks"
+        "Bluff Oak"
       ],
       "Scientific Name": "Quercus austrina",
       "Images": [
@@ -9678,8 +9674,7 @@ export const jsonData = {
         "Swamp Red Oak",
         "Shumard Oak",
         "Shumard Red Oak",
-        "Spotted Oak",
-        "Oaks"
+        "Spotted Oak"
       ],
       "Scientific Name": "Quercus shumardii",
       "Images": [
@@ -9952,7 +9947,6 @@ export const jsonData = {
     },
     {
       "Common Name": [
-        "Oaks",
         "Dwarf Live Oak"
       ],
       "Scientific Name": "Quercus minima",
@@ -13654,8 +13648,7 @@ export const jsonData = {
         "Swamp Willow Oak",
         "Willow Oak",
         "Peach Oak",
-        "Pin Oak",
-        "Oaks"
+        "Pin Oak"
       ],
       "Scientific Name": "Quercus phellos",
       "Images": [
@@ -13898,8 +13891,7 @@ export const jsonData = {
         "Darlington oak",
         "Upland Laurel Oak",
         "Darlington Oak",
-        "Coast Laurel Oak",
-        "Oaks"
+        "Coast Laurel Oak"
       ],
       "Scientific Name": "Quercus hemisphaerica",
       "Images": [
@@ -20906,8 +20898,7 @@ export const jsonData = {
         "Swamp Spanish Oak",
         "Swamp Oak",
         "Pink Oak",
-        "Pin Oak",
-        "Oaks"
+        "Pin Oak"
       ],
       "Scientific Name": "Quercus palustris",
       "Images": [
@@ -21485,7 +21476,6 @@ export const jsonData = {
     },
     {
       "Common Name": [
-        "Oaks",
         "Turkey Oak"
       ],
       "Scientific Name": "Quercus laevis",
@@ -21741,7 +21731,6 @@ export const jsonData = {
     },
     {
       "Common Name": [
-        "Oaks",
         "Oglethorpensis Oak"
       ],
       "Scientific Name": "Quercus oglethorpensis",
@@ -22202,8 +22191,7 @@ export const jsonData = {
     },
     {
       "Common Name": [
-        "Valley Oak",
-        "Oaks"
+        "Valley Oak"
       ],
       "Scientific Name": "Quercus lobata",
       "Images": [
@@ -24078,7 +24066,6 @@ export const jsonData = {
     {
       "Common Name": [
         "Swamp White Oak",
-        "Oaks",
         "Bicolor Oak"
       ],
       "Scientific Name": "Quercus bicolor",
@@ -24725,7 +24712,6 @@ export const jsonData = {
         "Diamondleaf Oak",
         "Obtusa Oak",
         "Darlington Oak",
-        "Oaks",
         "Laurel Leaf Oak",
         "Swamp Laurel Oak"
       ],
@@ -25559,8 +25545,7 @@ export const jsonData = {
         "Swamp White Oak",
         "Swamp Post Oak",
         "Water White Oak",
-        "Overcup Oak",
-        "Oaks"
+        "Overcup Oak"
       ],
       "Scientific Name": "Quercus lyrata",
       "Images": [
@@ -26597,7 +26582,6 @@ export const jsonData = {
         "https://www.gardenia.net/storage/app/public/uploads/images/detail/P0grYVAOJtflOiM0Xu0Dh21p0qBQuxcm4F4eGM0H.webp",
         "https://www.gardenia.net/storage/app/public/uploads/images/detail/UZwqND6SyULRfuMS1V0jspeGeCIyJdrvbaX6Drih.webp",
         "https://www.gardenia.net/storage/app/public/uploads/images/detail/oZJhnq9T8b4t6lkNhT3RGPz9ljTi1ASQJhaPTLol.webp",
-        "https://s3.amazonaws.com/eit-planttoolbox-prod/media/images/Cystopteris_bulbifer_5f8CWbHrwEpn.jpeg",
         "https://s3.amazonaws.com/eit-planttoolbox-prod/media/images/Cystopteris_bulbifer_NDFRKpZtICpa.jpeg",
         "https://s3.amazonaws.com/eit-planttoolbox-prod/media/images/Cystopteris_bulbifer_zW9BCGeYj1jn.jfif",
         "https://s3.amazonaws.com/eit-planttoolbox-prod/media/images/Cystopteris_bulbifer_05SxtLsv7aJT.jfif",
@@ -31174,7 +31158,6 @@ export const jsonData = {
         "Rock Chestnut Oak",
         "Basket Oak",
         "Chestnut Oak",
-        "Oaks",
         "Rock Oak"
       ],
       "Scientific Name": "Quercus montana",
@@ -31413,8 +31396,7 @@ export const jsonData = {
         "White Oak",
         "Northern White Oak",
         "Stave Oak",
-        "Eastern White Oak",
-        "Oaks"
+        "Eastern White Oak"
       ],
       "Scientific Name": "Quercus alba",
       "Images": [
@@ -32405,7 +32387,6 @@ export const jsonData = {
     {
       "Common Name": [
         "Sandhills Live Oak",
-        "Oaks",
         "Sand Live Oak"
       ],
       "Scientific Name": "Quercus geminata",
@@ -34613,8 +34594,7 @@ export const jsonData = {
         "Bur Oak",
         "Prairie Oak",
         "Mossy Overcup Oak",
-        "Mossycup Oak",
-        "Oaks"
+        "Mossycup Oak"
       ],
       "Scientific Name": "Quercus macrocarpa",
       "Images": [
@@ -36260,7 +36240,6 @@ export const jsonData = {
     {
       "Common Name": [
         "Georgia Oak",
-        "Oaks",
         "Stone Mountain Oak"
       ],
       "Scientific Name": "Quercus georgiana",
@@ -39867,8 +39846,7 @@ export const jsonData = {
         "Swamp Chestnut Oak",
         "Chestnut Oak",
         "Michaux Oak",
-        "Cow Oak",
-        "Oaks"
+        "Cow Oak"
       ],
       "Scientific Name": "Quercus michauxii",
       "Images": [
@@ -41196,7 +41174,6 @@ export const jsonData = {
         "Rock Oak",
         "Nuttall Oak",
         "Spanish Oak",
-        "Oaks",
         "Red Oak"
       ],
       "Scientific Name": "Quercus texana",
@@ -44053,7 +44030,6 @@ export const jsonData = {
         "Three-lobe Red Oak",
         "Water Oak",
         "Spanish Oak",
-        "Oaks",
         "Cherrybark Oak"
       ],
       "Scientific Name": "Quercus falcata",
@@ -46455,7 +46431,6 @@ export const jsonData = {
     {
       "Common Name": [
         "Laurel",
-        "Oaks",
         "Shingle Oak"
       ],
       "Scientific Name": "Quercus imbricaria",
@@ -48788,8 +48763,7 @@ export const jsonData = {
         "Blackjack Oak",
         "Jack Oak",
         "Black Oak",
-        "Barren Oak",
-        "Oaks"
+        "Barren Oak"
       ],
       "Scientific Name": "Quercus marilandica",
       "Images": [
@@ -50131,7 +50105,6 @@ export const jsonData = {
     {
       "Common Name": [
         "Cork Tree",
-        "Oaks",
         "Cork Oak"
       ],
       "Scientific Name": "Quercus suber",
@@ -50839,7 +50812,6 @@ export const jsonData = {
     {
       "Common Name": [
         "Moss-Cupped Oak",
-        "Oaks",
         "Turkey Oak"
       ],
       "Scientific Name": "Quercus cerris",
@@ -51177,7 +51149,6 @@ export const jsonData = {
         "Upland Willow Oak",
         "Turkey Oak",
         "Bluejack Oak",
-        "Oaks",
         "Sandjack Oak"
       ],
       "Scientific Name": "Quercus incana",
@@ -52495,7 +52466,6 @@ export const jsonData = {
         "Coast Live Oak",
         "Encino",
         "Bay Live Oak",
-        "Oaks",
         "Scrub Oak",
         "Plateau Oak"
       ],
@@ -58701,7 +58671,6 @@ export const jsonData = {
     {
       "Common Name": [
         "Iron Oak",
-        "Oaks",
         "Cross Oak",
         "Post Oak"
       ],
@@ -58845,7 +58814,6 @@ export const jsonData = {
         "Chestnut Oak",
         "Chinquapin Oak",
         "Yellow Oak",
-        "Oaks",
         "Rock Oak"
       ],
       "Scientific Name": "Quercus muehlenbergii",
@@ -58969,8 +58937,7 @@ export const jsonData = {
     {
       "Common Name": [
         "Dwarf Post Oak",
-        "Sand Post Oak",
-        "Oaks"
+        "Sand Post Oak"
       ],
       "Scientific Name": "Quercus margarettae",
       "Images": [
@@ -62887,7 +62854,6 @@ export const jsonData = {
     {
       "Common Name": [
         "Cherry Bark Oak",
-        "Oaks",
         "Cherrybark Oak"
       ],
       "Scientific Name": "Quercus pagoda",
