@@ -443,6 +443,22 @@ img {
 #next-question:hover {
     background-color: #696969;
 }
+#see-results {
+    position: flex;
+    display: none;
+    padding: 10px 20px;
+    background-color: #808080;
+    color: white;
+    cursor: pointer;
+    justify-content: center; 
+    align-items: center; 
+    text-align: center;
+    width: 290px;
+    margin-bottom:10px;
+}
+#see-results:hover {
+    background-color: #696969;
+}
 #tracking-container {
   max-width: 375px; /* Width of an iPhone */
   margin: 0 auto;

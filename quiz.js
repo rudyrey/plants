@@ -4,6 +4,7 @@ import { jsonData } from "./quiz-json.js";
 
 const quizElement = document.getElementById("quiz");
 const nextQuestionButton = document.getElementById("next-question");
+const seeResultsButton = document.getElementById("see-results");
 const landingPage = document.getElementById("landing");
 const commonNameButton = document.getElementById("commonName");
 const scientificNameButton = document.getElementById("scientificName");
@@ -64,6 +65,27 @@ nextQuestionButton.onclick = () => {
     localStorage.setItem('state',state);
 
     nextQuestionButton.style.display = "none";
+    if (questionCount >= 10) {
+        saveUserStatistics();
+    }
+
+    displayQuestion();
+};
+seeResultsButton.onclick = () => {
+    // Clear answerResults and other values from local storage
+    localStorage.removeItem('shuffledOptions');
+    localStorage.removeItem('randomPlantIndex');
+    localStorage.removeItem('randomCommonNameIndex');
+    localStorage.removeItem('correctAnswer');
+
+    // Increment the questionCount
+    questionCount++;
+
+    // Save the updated questionCount to local storage
+    localStorage.setItem('questionCount', questionCount.toString());
+    localStorage.setItem('state',state);
+
+    seeResultsButton.style.display = "none";
     if (questionCount >= 10) {
         saveUserStatistics();
     }
@@ -385,6 +407,7 @@ function displayImages(images) {
 function displayQuestion() {
     // Check if questionCount is available in local storage
     questionCount = localStorage.getItem('questionCount') ? parseInt(localStorage.getItem('questionCount')) : 0;
+    correctCount = localStorage.getItem('correctCount') ? parseInt(localStorage.getItem('correctCount')) : 0;
     let stateFromLocalStorage = localStorage.getItem('state');
     let stateFromURL = getStateFromUrl();
     
@@ -543,6 +566,7 @@ function displayQuestion() {
                 }
                 answerArray[questionCount] = "incorrect";
             }
+            localStorage.setItem('correctCount', correctCount);
             localStorage.setItem('answerTracking', answerTracking);
             localStorage.setItem('answerArray', answerArray);
             li.style.color = "white";
@@ -552,9 +576,17 @@ function displayQuestion() {
             item.classList.add("disabled");
             });
 
-            const nextQuestionButton = document.getElementById("next-question");
-            nextQuestionButton.style.display = "block";
-            nextQuestionButton.classList.remove("disabled");
+            if (questionCount === 9) {
+                // If questionCount is 10, show the 'See Results' button and hide the 'Next Question' button
+                seeResultsButton.style.display = "block";
+                seeResultsButton.classList.remove("disabled");
+                nextQuestionButton.style.display = "none";
+            } else {
+                // Otherwise, show the 'Next Question' button and hide the 'See Results' button
+                nextQuestionButton.style.display = "block";
+                nextQuestionButton.classList.remove("disabled");
+                seeResultsButton.style.display = "none";
+            }
             updateProgressBar(questionCount+1, answerArray,1);
             console.log('answerTracking:', answerTracking);
             localStorage.setItem('answerTracking',answerTracking);
@@ -600,9 +632,17 @@ function displayQuestion() {
                     }
                 }
 
-                const nextQuestionButton = document.getElementById("next-question");
-                nextQuestionButton.style.display = "block";
-                nextQuestionButton.classList.remove("disabled");
+                if (questionCount === 9) {
+                    // If questionCount is 10, show the 'See Results' button and hide the 'Next Question' button
+                    seeResultsButton.style.display = "block";
+                    seeResultsButton.classList.remove("disabled");
+                    nextQuestionButton.style.display = "none";
+                } else {
+                    // Otherwise, show the 'Next Question' button and hide the 'See Results' button
+                    nextQuestionButton.style.display = "block";
+                    nextQuestionButton.classList.remove("disabled");
+                    seeResultsButton.style.display = "none";
+                }
             }
         }
 }
