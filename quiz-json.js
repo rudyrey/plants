@@ -10549,7 +10549,6 @@ export const jsonData = {
         "https://www.gardenia.net/storage/app/public/uploads/images/detail/EJVY2H20NC4Go8lvvFGFIa83okegG4wsBuSNQAip.webp",
         "https://s3.amazonaws.com/eit-planttoolbox-prod/media/images/Clematis-texensis--Walker-Wilson--CC-BY-NC-SA.jpg",
         "https://s3.amazonaws.com/eit-planttoolbox-prod/media/images/Clematis-texensis--Peganum--cc-by-sa-2-0.jpg",
-        "https://s3.amazonaws.com/eit-planttoolbox-prod/media/images/Clematis-texensis--Alwyn-Ladell--cc-by-nc-nd-2-0.jpg",
         "https://s3.amazonaws.com/eit-planttoolbox-prod/media/images/Clematis_texensis_by_suK4eFdCHzJi.jfif",
         "https://s3.amazonaws.com/eit-planttoolbox-prod/media/images/Clematis_texensis_by_7Yk0NsXU7UdQ.jpe",
         "https://s3.amazonaws.com/eit-planttoolbox-prod/media/images/Clematis_Texensis_by_YvTvzYsJJxJO.jpe",
@@ -25679,7 +25678,6 @@ export const jsonData = {
       ],
       "Scientific Name": "Ampelopsis arborea",
       "Images": [
-        "https://s3.amazonaws.com/eit-planttoolbox-prod/media/images/Ampelopsis_arborea_f_I9On3IBRYfRD.jpe",
         "https://s3.amazonaws.com/eit-planttoolbox-prod/media/images/Ampelopsis-arborea--leaves-and-fruit--Mary-Keim--CC-BY-NC-SA-2-0_12347321273_m.jpg",
         "https://s3.amazonaws.com/eit-planttoolbox-prod/media/images/Ampelopsis-arborea--habit--Jason-Sharp--CC-BY-NC-SA-2-0_12347321513_m.jpg",
         "https://s3.amazonaws.com/eit-planttoolbox-prod/media/images/Ampelopsis_arborea_Peppervine_Sesamehoneytart_ccbysa30.jpg",
@@ -29610,7 +29608,6 @@ export const jsonData = {
         "https://live.staticflickr.com/2037/2200268228_a97de4c98a_z.jpg",
         "https://live.staticflickr.com/2325/2200268436_c80ae33d81_w.jpg",
         "https://www.gardenia.net/storage/app/public/uploads/images/detail/aJHWY9Sni4BWuXlCJcheqXSEWPULzGiaCyMzAqOc.webp",
-        "https://s3.amazonaws.com/eit-planttoolbox-prod/media/images/Psilotum_nudum_form__pPqWqyQhjFQa.jpe",
         "https://s3.amazonaws.com/eit-planttoolbox-prod/media/images/Psilotum_nudum_plant_9JbBElAXVK3X.jpeg",
         "https://s3.amazonaws.com/eit-planttoolbox-prod/media/images/Psilotum_nudum_growi_O8IOImlNlmqF.jpeg",
         "https://s3.amazonaws.com/eit-planttoolbox-prod/media/images/Psilotum_nudum_epiph_FKNBw2jatcA9.jpeg"
@@ -63483,7 +63480,6 @@ export const jsonData = {
       ],
       "Scientific Name": "Dryopteris celsa",
       "Images": [
-        "https://s3.amazonaws.com/eit-planttoolbox-prod/media/images/Dryopteris-celsa--James-Emery--CC-BY.jpg",
         "https://s3.amazonaws.com/eit-planttoolbox-prod/media/images/David_Stang_Attribution-ShareAlike_4.0_International_CC_BY-SA_4.0_Dryopteris_celsa.jpe",
         "https://s3.amazonaws.com/eit-planttoolbox-prod/media/images/Krzysztof_Ziarnek_Attribution-ShareAlike_4.0_International_CC_BY-SA_4.0_Dryopteris_celsa.jpg",
         "https://s3.amazonaws.com/eit-planttoolbox-prod/media/images/Dryopteris_celsa_mRarzirCFFD1.jpeg",

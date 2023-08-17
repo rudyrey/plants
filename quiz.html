@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOC TYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -7,7 +7,7 @@
   <link rel="icon" href="https://em-content.zobj.net/thumbs/320/microsoft/319/seedling_1f331.png">
   <title>Nativle - Plant Quiz</title>
   <link rel="stylesheet" href="quiz.css">
-  <link rel="stylesheet" href="https://rudyrey.github.io/plantmap/quiz-bonap.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <!-- Include the Libre Baskerville font from Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,7 +16,7 @@
 </head>
 <body>
   <div class="top-bar">
-      <div class="menu-btn">
+      <div class="menu-btn" id="mainMenu">
           <svg class="NavIcon-module_burgerSvg__j9Cig" width="26" height="22" viewBox="0 0 30 22" fill="none" xmlns="http://www.w3.org/2000/svg">
               <rect x="0.172974" width="26" height="4" rx="2" fill="black"></rect>
               <rect x="0.172974" y="9" width="26" height="4" rx="2" fill="black"></rect>
@@ -27,8 +27,19 @@
           <h1 id="title">Nativle </h1>
           <h3>a native plant quiz game</h3>
       </div>
+      <div class="menu-btn" id="statsButton">
+        <span class="material-symbols-outlined">bar_chart</span>
+      </div>
+  </div>
+  <div id="statsModal" class="stats-modal">
+      <div class="modal-content">
+          <span id="closeModal" class="close-button">&times;</span>
+          <!-- Stats will be inserted here -->
+          <div id="playerStats"></div>
+      </div>
   </div>
   <div id="menu" class="menu">
+    <hr class="menu-spacer">
     <a href="https://rudyrey.github.io/plantmap/#" class="menu-link"><img src="https://em-content.zobj.net/thumbs/320/microsoft/319/seedling_1f331.png" alt="Nativle" class="menu-icon">Nativle Maps</a>
     <a href="https://rudyrey.github.io/plantinfo/#" class="menu-link"><img src="https://em-content.zobj.net/thumbs/320/microsoft/319/seedling_1f331.png" alt="Nativle" class="menu-icon">Nativle Info</a>
     <hr class="menu-divider"> <!-- Add the divider -->
@@ -41,6 +52,18 @@
     <a href="https://wildflower.org/"><img src="https://www.google.com/s2/favicons?domain=wildflower.org" alt="Wildflower Center" class="menu-icon">Wildflower Center</a> <!-- Link with image -->
   </div>
   <div class="main-content">
+    <div id="progress-bar">
+        <div class="progress-section" data-index="1"></div>
+        <div class="progress-section" data-index="2"></div>
+        <div class="progress-section" data-index="3"></div>
+        <div class="progress-section" data-index="4"></div>
+        <div class="progress-section" data-index="5"></div>
+        <div class="progress-section" data-index="6"></div>
+        <div class="progress-section" data-index="7"></div>
+        <div class="progress-section" data-index="8"></div>
+        <div class="progress-section" data-index="9"></div>
+        <div class="progress-section" data-index="10"></div>
+    </div>
     <div id="landing">
       <h2>Choose your quiz type:</h2>
       <button id="commonName">Common Name</button>
@@ -54,7 +77,7 @@
       <div id="image-container">
         <div id="images">
           <div class="image-scroll-container">
-            <img id="image" alt="Plant image" style="max-width: 100%; height: auto; margin-right: 5px;">
+            <img id="image" alt="Plant image">
           </div>
         </div>
       </div>
@@ -64,37 +87,157 @@
       <div id="tracking-container">
         <div id="tracking"></div>
       </div>
-      <div class="button-wrapper" id="retake-buttons" style="display: flex;">
-        <button id="retake">Retake Quiz</button>
-        <button id="restart">Restart</button>
-        <div id="message" class="message"></div>
-        <button id="share"><span class="material-symbols-outlined">ios_share</span></button>
-      </div>
+        <div class="button-wrapper" id="retake-buttons" style="display: flex;">
+            <button id="retake">Retake</button>
+            <button id="restart">New State</button>
+            <div id="message" class="message"></div>
+            <button id="share"><span class="material-symbols-outlined">ios_share</span></button>
+        </div>
     </div>
   </div>
   <script src="quiz-json.js" type="module"></script>
   <script src="quiz.js" type="module"></script>
   <script>
-    // Get the menu and the menu button
-    var menu = document.getElementById('menu');
-    var btn = document.querySelector('.menu-btn');
+  </script>
+  <script>
+  </script>
+  <style>
+    .stats-modal {
+        display: none; /* Initially hidden */
+        position: fixed; /* Fixed position */
+        top: 0;
+        left: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+        z-index: 1000; /* Place it over everything else on the page */
+    }
+    .modal-content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); /* Centering the modal */
+        padding: 15px 15px 0px 15px;
+        background-color: #fff; /* White background for the content */
+        width: 80%; /* Use 80% of screen width, adjust as needed */
+        max-width: 500px; /* Maximum width of the modal content, adjust as needed */
+        max-height: 90%;
+        height:714px;
+        overflow-y: auto; /* Add vertical scrollbar if content overflows */
+        box-sizing: border-box; /* Include padding and border in the element's total width and height */
+        border-radius: 8px; /* Optional: Rounded corners for the modal */
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Optional: Shadow for a bit of depth */
+    }
 
-    // Add an event listener to the menu button
-    btn.addEventListener('click', function(event) {
-        // Toggle the 'open' class on the menu
-        menu.classList.toggle('open');
+    .close-button {
+        position: absolute;
+        top: 0px;
+        right: 7px;
+        font-size: 24px;
+        cursor: pointer;
+        display:none;
+    }
+    /* Styling for the unordered list inside the modal */
+    .modal-content ul {
+        list-style-type: none; /* Remove the default bullets */
+        padding: 0; /* Remove default padding */
+        margin: 0; /* Remove default margin but keep some space at the bottom */
+        border-top: 1px solid #e0e0e0; /* Optional top border for a clean look */
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    /* Styling for the list items inside the modal */
+    .modal-content li {
+        padding: 0; /* Add some vertical padding for spacing */
+        border-bottom: 1px solid #e0e0e0; /* Bottom border for separation */
+        font-size: 12px; /* Adjust text size if necessary */
+        margin: 0px;
+        background-color: "green";
+        border-radius: 0px;
+        color: #333;
+        transition: background-color 0.3s ease;
+    }
+    .modal-content h2 {
+        font-family: "Segoe UI", "Helvetica Neue", "Arial", sans-serif;
+        text-align: center; 
+        margin: 7px;
+    }
+    .stat-container {
+        border: 1px solid #ccc;  /* Adds a border around the histogram */
+        background-color: #f5f5f5;  /* Sets a light grey background color */
+        padding: 0px 5px 5px 5px;  /* Adds some spacing inside the histogram box */
+        margin-bottom: 15px;  /* Adds some space below each histogram */
+        border-radius: 3px;  /* Rounds the corners for a softer appearance */
+    }
+    .top-stat-container {
+        border: 1px solid #ccc;  /* Adds a border around the histogram */
+        background-color: #f5f5f5;  /* Sets a light grey background color */
+        padding: 5px 5px 0px 5px;  /* Adds some spacing inside the histogram box */
+        margin-bottom: 15px;  /* Adds some space below each histogram */
+        border-radius: 3px;  /* Rounds the corners for a softer appearance */
+        display: flex;              /* Lays out the children (stat-item divs) horizontally */
+        justify-content: space-between; /* Spreads out the items evenly */
+    }
 
-        // Prevents the event from bubbling up to the document
-        event.stopPropagation();
-    });
+    .stat-item {
+        flex: 1;                    /* Allows each item to take up equal width */
+        text-align: center;         /* Centers the text */
+        margin: 0 10px;             /* Adds some margin between each item for spacing */
+    }
 
-    // New event listener for the document
-    document.addEventListener('click', function(event) {
-        if (!menu.contains(event.target)) {
-            // If the clicked target is not within the menu, remove 'open' class from the menu
-            menu.classList.remove('open');
-        }
-    });
-</script>
+    .stat-category {
+        font-size: 0.8em;           /* Smaller font for the category */
+        margin-bottom: 5px;         /* Spacing between category and value */
+    }
+
+    .stat-value {
+        font-size: 1.5em;           /* Bigger font for the value */
+        margin-bottom: 5px;
+    }
+
+    /* Optionally: Add some hover effect to list items for better interactivity */
+    .modal-content li:hover {
+        background-color: "white"; /* Light gray background on hover */
+    }
+    .histogram-bar-container {
+        display: flex;
+        align-items: center;
+        margin: 5px 0;
+    }
+
+    .histogram-bar {
+        background-color: #4CAF50;
+        width: 0%; /* Set this with JavaScript */
+        height: 20px;
+        transition: width 0.4s; /* Smooth transition */
+        display: flex;
+        align-items: center;
+        justify-content: flex-end; /* Aligns content to the right */
+        color: white;
+        font-weight: bold;
+        min-width: 20px; /* To fit a single digit */
+        border-radius: 5px;
+    }
+    .histogram-bar.zero {
+        background-color: gray;
+    }
+    .scoreCountHist {
+        display: flex;       /* Ensures children are centered */
+        align-items: center; /* Vertically center the content */
+        justify-content: center; /* Horizontally center the content */
+        padding-right: 5px; /* Padding on the right side */
+        font-size:16px;
+    }
+    .scoreValueHist {
+        width: 16px;
+        display: flex;       /* Ensures children are centered */
+        align-items: center; /* Vertically center the content */
+        justify-content: center; /* Horizontally center the content */
+        padding-right: 5px; /* Padding on the right side */
+        font-weight: bold;
+        font-size:16px;
+    }
+  </style>
 </body>
 </html>
