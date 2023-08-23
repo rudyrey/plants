@@ -53,9 +53,85 @@ body {
   background-color: #f0f0f0;
 }
 img {
-  margin-bottom: 20px;
+  margin-bottom: 0px;
   border-radius: 0px;
   max-height: 300px;
+}
+
+/* Results Rows */
+.actualNameDiv {
+    width: 50%;
+    align-items: center;
+}
+.nameDiv {
+    width: 50%;
+    align-items: center;
+}
+.expandDiv {
+    width: 5%;
+    align-items: center;
+}
+.namesContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 38px;
+}
+.nameP {
+    margin: 0;
+    justify-content: center;
+    width: 100%;
+}
+.actualNameP {
+    margin: 0;
+    justify-content: center;
+    font-style: italic;
+    width: 100%;
+}
+.result-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+    padding: 5px;
+    border-radius: 3px;
+    align-items: center;
+    cursor: pointer;
+}
+.result-row:hover {
+  background-color: #eee;
+}
+.result-row p {
+    font-size: 16px;
+    margin: 0;
+    line-height: 1; /* Add this line to improve the line spacing */
+    padding: 3px;
+    /*width: 50%;*/
+    text-align: center;
+}
+.result-row.expanded .expand-icon {
+    content: "-";
+}
+.collapsible-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+}
+.collapsible-content p {
+    margin: 5px 0;
+}
+.resultsImage {
+    width = 100%;
+    margin-top = 10px;
+}
+.imageContainer{
+    display: flex;
+    overflow-x: scroll;
+    max-width: 100%;
+    max-height: 300px;
+    scrollbar-width: thin;
 }
 .image-row {
   display: flex;
@@ -70,31 +146,21 @@ img {
   min-width: auto; /* allows images to maintain their natural width */
   margin-right: 5px; /* add right margin to create a gap between images */
 }
-.result-row {
-  cursor: pointer; /* og */
-  display: flex;
-  justify-content: space-between;
-  align-items: center; /* Add this line to center the text vertically */
-  background-color: var(--light-green);
-  border-radius: 3px;
+.expand-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    padding: 5px;
+    cursor: pointer;
+    user-select: none;
 }
-.result-row:hover {
-  background-color: #eee;
-}
-.result-row p {
-    font-size: 16px;
-    margin: 0;
-    line-height: 1; /* Add this line to improve the line spacing */
-    padding: 3px;
-    width: 50%;
-    text-align: center;
-}
-.collapsible-content p {
-  margin: 5px 0;
-}
+
+
 .bonap-map {
-  width: 170px;
-  margin-top: 5px;
+  width: 160px;
+  margin: 0px;
+    
 }
 .correct-answer {
   background-color: var(--light-green)
@@ -139,6 +205,9 @@ img {
   background-color: #ccc;
   border-radius: 3px;
 }
+.main-content {
+    margin-top: 65px;
+}
 .message {
     position: fixed;
     bottom: 20px;
@@ -151,18 +220,22 @@ img {
     font-size: 14px;
     display: none;
 }
+
+/* Menu */
 .menu {
-  height: 220px;
-  width: 0;
+  height: 0px;
+  width: 200px;
   position: fixed;
   z-index: 1;
-  top: 65px; /* Start from the bottom of the top bar */
-  left: -1px;
-  background-color: #fff; /* Change background color to white */
+  top: 60px;
+  left: 0;
+  background-color: #fff;
   overflow-x: hidden;
+  overflow-y: hidden;
   transition: 0.5s;
-  border: 1px solid grey; /* Grey border */
-  font-family: 'Libre Baskerville', serif; /* Same font as the top bar */
+  border: 1px solid grey;
+  font-family: 'Libre Baskerville', serif;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Add this line */
 }
 .menu a {
   padding: 0px 0px 0px 5px;
@@ -179,12 +252,12 @@ img {
   background-color: #ccc; /* Background turns grey */
 }
 .menu.open {
-  width: 200px;
+  height: 230px; /* Set to the desired height when open */
 }
 .menu-spacer {
   border: 0;
   border-top: 0px solid #ccc; /* set the color of the divider */
-  margin: 3px 0; /* add some margin to separate the links */
+  margin: 6px 0; /* add some margin to separate the links */
 }
 .menu-divider {
   border: 0;
@@ -197,7 +270,7 @@ img {
   margin-right: 8px; /* add some space between the icon and the text */
   vertical-align: middle; /* align the icon with the text */
   margin-bottom: 4px;
-    object-fit: cover; /* ensures the image maintains its aspect ratio */
+  object-fit: cover; /* ensures the image maintains its aspect ratio */
 }
 .next-questions {
   width: 100%;
@@ -280,7 +353,7 @@ img {
     z-index: 1000; /* og */
     font-family: 'Libre Baskerville', serif; /* og */
     color: #333; /* og */
-    position: sticky; /* og */
+    position: fixed; /* og */
     height: auto;
     /* flex-direction: column; /* Change to column layout */
 }
@@ -308,7 +381,6 @@ img {
   padding: 0;
 }
 .state-menu {
-  height: calc(100vh - 100px); /* Adjust the height to fill the rest of the screen */
   overflow-y: scroll; /* Add a scrollbar if necessary */
 }
 .state-menu ul {
@@ -401,10 +473,11 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 #image {
   max-width: 100%;
-  max-height: calc(100vh - 250px); /* 100vh is the full height of the viewport, minus 40px for any additional padding/margin */
+  max-height: calc(100vh - 400px); /* 100vh is the full height of the viewport, minus 40px for any additional padding/margin */
   object-fit: contain; /* Ensures the image maintains its aspect ratio */
 }
 #search-bar {
@@ -474,15 +547,16 @@ img {
 #results {
   display: none;
 }
-#image-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+#name-container p {
+    margin-bottom: 5px;
 }
 #image {
   max-width: 100%;
   max-height: 300px; /* 100vh is the full height of the viewport, minus 40px for any additional padding/margin */
   object-fit: contain; /* Ensures the image maintains its aspect ratio */
+}
+#image-scroll-container-bonap img {
+  max-height: 200px;
 }
 #share {
   border: none;                    /* Remove any border */
@@ -499,6 +573,11 @@ img {
 #statsButton {
   cursor: pointer;
     margin-right: 15px;
+}
+#statsPlaceholder {
+    margin-right: 15px;
+    width: 24px;
+    height: 24px;
 }
 @media (max-width: 767px) {
   ul {
@@ -531,7 +610,6 @@ img {
     width: 100%;
     border: 1px solid #ccc;
 }
-
 .progress-section {
     flex: 1;  /* This ensures each section takes up an equal amount of space */
     background-color: lightgray;  /* Default background color */
@@ -549,11 +627,9 @@ img {
 .progress-section.correct {
     background-color: var(--light-light-green);
 }
-
 .progress-section.incorrect {
     background-color: var(--light-red);
 }
-
 .progress-section.current {
     background-color: var(--water);
 }

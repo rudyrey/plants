@@ -345,64 +345,118 @@ function loadUserStatistics() {
 function displayResult() {
     const quizElement = document.getElementById("quiz");
     quizElement.style.display = "none";
+
     const resultsElement = document.getElementById("results");
     resultsElement.style.display = "block";
+
     const trackingElement = document.getElementById("tracking");
     trackingElement.innerHTML = "";
 
-    answerResults = localStorage.getItem('answerResults') ? JSON.parse(localStorage.getItem('answerResults')) : [];
+    const answerResults = localStorage.getItem('answerResults') ? JSON.parse(localStorage.getItem('answerResults')) : [];
 
-    answerResults.forEach((answerResult) => {
-        const row = document.createElement("div");
-        row.className = "result-row";
-        row.style.display = "flex";
-        row.style.justifyContent = "space-between";
-        row.style.backgroundColor = answerResult.correct ? "var(--light-light-green)" : "var(--light-red)";
-        row.style.marginBottom = "5px";
-        row.style.padding = "5px";
-        row.style.borderRadius = "5px";
+answerResults.forEach((answerResult) => {
+    const row = document.createElement("div");
+    row.className = "result-row";
+    row.style.backgroundColor = answerResult.correct ? "var(--light-light-green)" : "var(--light-red)";
 
-        const nameP = document.createElement("p");
-        if (quizType === "Common Name") {
-          nameP.textContent = answerResult.commonName;
-        } else {
-          nameP.textContent = answerResult.commonName;
-        }
-        nameP.style.margin = "0";
-        row.appendChild(nameP);
+    const collapsibleContent = document.createElement("div");
+    collapsibleContent.className = "collapsible-content";
 
-        const actualNameP = document.createElement("p");
-        if (quizType === "Common Name") {
-          actualNameP.textContent = answerResult.scientificName;
-        } else {
-          actualNameP.textContent = answerResult.scientificName; // Display the first common name
-        }
-        actualNameP.style.margin = "0";
-        actualNameP.style.fontStyle = "italic";
-        row.appendChild(actualNameP);
+    const nameDiv = document.createElement("div");
+    nameDiv.className = "nameDiv";
+    
+    const nameP = document.createElement("p");
+    nameP.textContent = answerResult.commonName;
+    nameP.className = "nameP";
+    nameDiv.appendChild(nameP);
+    
+    const actualNameDiv = document.createElement("div");
+    actualNameDiv.className = "actualNameDiv";
+    
+    const actualNameP = document.createElement("p");
+    actualNameP.className = "actualNameP";
+    actualNameP.textContent = answerResult.scientificName;
+    actualNameDiv.appendChild(actualNameP);
+            
+    const expandDiv = document.createElement("div");
+    expandDiv.className = "expandDiv";
+    
+    const expandIcon = document.createElement("p");
+    expandIcon.className = "expand-icon";
+    expandIcon.textContent = "+";
+    expandDiv.appendChild(expandIcon);
+    
+    const namesContainer = document.createElement("div");
+    namesContainer.className = "namesContainer";
+    namesContainer.appendChild(nameDiv);
+    namesContainer.appendChild(actualNameDiv);
+    namesContainer.appendChild(expandDiv);
+    collapsibleContent.appendChild(namesContainer); 
+    
+    // Create a new image container for each result
+    const imageContainer = document.createElement("div");
+    imageContainer.className = "imageContainer";
+    
+    // Add the images to this container
+    answerResult.images.forEach((imageUrl) => {
+        const img = document.createElement("img");
+        img.src = imageUrl;
+        img.alt = "Plant image";
+        img.style.maxWidth = "100%";
+        img.style.height = "auto";
+        img.style.marginRight = "5px";
 
+        imageContainer.appendChild(img);
+    });
+
+        
+        //const image = document.createElement("img");
+//        image.className = "resultsImage";
+//        image.src = `http://bonap.net/MapGallery/County/${answerResult.scientificName}.png`;
+//        image.alt = `${answerResult.scientificName} distribution map`;
+        collapsibleContent.appendChild(imageContainer);
+
+        row.appendChild(collapsibleContent);
+        trackingElement.appendChild(row);
+
+        // After appending to DOM, we can get the actual height
+        const namesContainerHeight = namesContainer.getBoundingClientRect().height;
+        
+        // Set the initial maxHeight to the computed height of namesContainer
+        collapsibleContent.style.maxHeight = `${namesContainerHeight}px`;
+
+        row.addEventListener("click", () => {
+            if (collapsibleContent.style.maxHeight === `${namesContainerHeight}px`) {
+                collapsibleContent.style.maxHeight = "600px";
+                expandIcon.textContent = "-"; // Change to '-' when expanded
+            } else {
+                collapsibleContent.style.maxHeight = `${namesContainerHeight}px`;
+                expandIcon.textContent = "+"; // Change back to '+' when collapsed
+            }
+        });
+        
         trackingElement.appendChild(row);
     });
 
-  const userStatsElement = document.getElementById("user-stats");
+    const userStatsElement = document.getElementById("user-stats");
 }
 function displayImages(images) {
-  const imageContainer = document.getElementById("images"); // Change this line
+    const imageContainer = document.getElementById("images"); // Change this line
 
-  // Remove existing images from the container
-  imageContainer.innerHTML = "";
+    // Remove existing images from the container
+    imageContainer.innerHTML = "";
 
-  // Add the new images
-  images.forEach((imageUrl) => {
-    const img = document.createElement("img");
-    img.src = imageUrl;
-    img.alt = "Plant image";
-    img.style.maxWidth = "100%";
-    img.style.height = "auto";
-    img.style.marginRight = "5px";
+    // Add the new images
+    images.forEach((imageUrl) => {
+        const img = document.createElement("img");
+        img.src = imageUrl;
+        img.alt = "Plant image";
+        img.style.maxWidth = "100%";
+        img.style.height = "auto";
+        img.style.marginRight = "5px";
 
-    imageContainer.appendChild(img);
-  });
+        imageContainer.appendChild(img);
+    });
 }
 function displayQuestion() {
     // Check if questionCount is available in local storage
@@ -544,7 +598,8 @@ function displayQuestion() {
                 scientificName: randomPlant["Scientific Name"], // Save the scientific name here
                 usedName: option, // Save the used common name or scientific name here
                 correct: option === correctAnswer,
-                isAnswered: true
+                isAnswered: true,
+                images: randomPlant.Images
             };
             
             answerResults.push(answerResult);
