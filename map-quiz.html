@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://em-content.zobj.net/thumbs/320/microsoft/319/seedling_1f331.png">
+    <title>Nativle Maps - Plant Quiz</title>
+    <link rel="stylesheet" href="quiz.css">
+    <!-- Include the Libre Baskerville font from Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,600,0,0">
+</head>
+<body>
+  <div class="top-bar">
+      <div class="menu-btn" id="mainMenu">
+          <svg class="NavIcon-module_burgerSvg__j9Cig" width="26" height="22" viewBox="0 0 30 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="0.172974" width="26" height="4" rx="2" fill="black"></rect>
+              <rect x="0.172974" y="9" width="26" height="4" rx="2" fill="black"></rect>
+              <rect x="0.172974" y="18" width="26" height="4" rx="2" fill="black"></rect>
+          </svg>
+      </div>
+      <div class="title-container">
+          <h1 id="title">Nativle <span style="color: var(--sienna);">Maps</span></h1>
+          <h3>a native plant map quiz</h3>
+      </div>
+      <div class="menu-btn" id="statsPlaceholder">
+        
+      </div>
+  </div>
+  <div id="statsModal" class="stats-modal">
+      <div class="modal-content">
+          <span id="closeModal" class="close-button">&times;</span>
+          <!-- Stats will be inserted here -->
+          <div id="playerStats"></div>
+      </div>
+  </div>
+  <div id="menu" class="menu">
+    <hr class="menu-spacer">
+    <a href="quiz.html" class="menu-link"><img src="https://em-content.zobj.net/thumbs/320/microsoft/319/seedling_1f331.png" alt="Nativle" class="menu-icon">Nativle</a>
+    <a href="https://rudyrey.github.io/plantinfo/#" class="menu-link"><img src="https://em-content.zobj.net/thumbs/320/microsoft/319/seedling_1f331.png" alt="Nativle" class="menu-icon">Nativle Info</a>
+    <hr class="menu-divider"> <!-- Add the divider -->
+    <a href="https://gardenforwildlife.com"><img src="https://gardenforwildlife.com/cdn/shop/files/GFW-Favicon_32x32.png?v=1642637359" alt="Garden for Wildlife" class="menu-icon">Garden for Wildlife</a> <!-- Link with image -->
+    <a href="https://seedsource.com/"><img src="https://cdn11.bigcommerce.com/s-9ht3qzdye/product_images/favicon.png?t=1607460759" alt="Native American Seed" class="menu-icon">Native American Seed</a> <!-- Link with image -->
+    <a href="https://nativeenhancements.com/"><img src="https://www.google.com/s2/favicons?domain=nativeenhancements.com" alt="Native Enhancements" class="menu-icon">Native Enhancements</a> <!-- Link with image -->
+    <hr class="menu-divider"> <!-- Add the divider -->
+    <a href="https://gardenia.net"><img src="https://www.google.com/s2/favicons?domain=gardenia.net" alt="Gardenia" class="menu-icon">Gardenia</a> <!-- Link with image -->
+    <a href="http://bonap.net/"><img src="http://bonap.org/Homepage/lefteagle.jpg" alt="BONAP" class="menu-icon">Biota of North America</a> <!-- Link with image -->
+    <a href="https://wildflower.org/"><img src="https://www.google.com/s2/favicons?domain=wildflower.org" alt="Wildflower Center" class="menu-icon">Wildflower Center</a> <!-- Link with image -->
+  </div>
+    <div class="main-content">
+        <div id="quiz">
+            <div id="name-container">
+                <p id="common-names"></p>
+                <p id="scientific-name" style="font-style: italic;"></p>
+            </div>
+            <div id="image-container">
+                <div id="images">
+                    <div class="image-scroll-container" id="image-scroll-container-bonap">
+                        <img id="image" alt="Plant image">
+                    </div>
+                </div>
+            </div>
+            <ul id="options"></ul>
+            <button id="next-question" style="display: none;">Next Question</button>
+        </div>
+        <div id="results" style="display: none;">
+            <div id="user-stats"></div>
+            <p id="result"></p>
+            <div id="tracking-container">
+                <div id="tracking"></div>
+            </div>
+            <div class="button-wrapper" id="retake-buttons" style="display: flex;">
+                <button id="retake">Retake Quiz</button>
+                <button id="restart">Restart</button>
+                <div id="message" class="message"></div>
+                <button id="share"><span class="material-symbols-outlined">ios_share</span></button>
+            </div>
+        </div>
+    </div>
+    <script src="quiz-json.js" type="module"></script>
+    <script src="quiz-bonap.js" type="module"></script>
+    <script>
+      // Get the menu and the menu button
+      var menu = document.getElementById('menu');
+      var btn = document.querySelector('.menu-btn');
+
+      // Add an event listener to the menu button
+      btn.addEventListener('click', function(event) {
+          // Toggle the 'open' class on the menu
+          menu.classList.toggle('open');
+
+          // Prevents the event from bubbling up to the document
+          event.stopPropagation();
+      });
+
+      // New event listener for the document
+      document.addEventListener('click', function(event) {
+          if (!menu.contains(event.target)) {
+              // If the clicked target is not within the menu, remove 'open' class from the menu
+              menu.classList.remove('open');
+          }
+      });
+  </script>
+</body>
+</html>
