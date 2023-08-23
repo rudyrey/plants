@@ -92,7 +92,7 @@ img {
     display: flex;
     justify-content: space-between;
     margin-bottom: 5px;
-    padding: 5px;
+    padding: 2px;
     border-radius: 3px;
     align-items: center;
     cursor: pointer;
