@@ -73,23 +73,19 @@ img {
 }
 .namesContainer {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    min-height: 38px;
+    min-height: 24px;
 }
 .nameP {
-    margin: 0;
+    margin: 0px;
     justify-content: center;
-    width: 100%;
 }
 .actualNameP {
-    margin: 0;
+    margin: 0px;
     justify-content: center;
     font-style: italic;
-    width: 100%;
 }
 .result-row {
-    display: flex;
     justify-content: space-between;
     margin-bottom: 5px;
     padding: 2px;
@@ -101,7 +97,7 @@ img {
   background-color: #eee;
 }
 .result-row p {
-    font-size: 16px;
+    font-size: 14px;
     margin: 0;
     line-height: 1; /* Add this line to improve the line spacing */
     padding: 3px;
@@ -120,7 +116,7 @@ img {
     transition: max-height 0.3s ease-in-out;
 }
 .collapsible-content p {
-    margin: 5px 0;
+    margin: 0px;
 }
 .resultsImage {
     width = 100%;
@@ -155,7 +151,6 @@ img {
     cursor: pointer;
     user-select: none;
 }
-
 
 .bonap-map {
   width: 160px;

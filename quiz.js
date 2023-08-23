@@ -354,66 +354,61 @@ function displayResult() {
 
     const answerResults = localStorage.getItem('answerResults') ? JSON.parse(localStorage.getItem('answerResults')) : [];
 
-answerResults.forEach((answerResult) => {
-    const row = document.createElement("div");
-    row.className = "result-row";
-    row.style.backgroundColor = answerResult.correct ? "var(--light-light-green)" : "var(--light-red)";
+    answerResults.forEach((answerResult) => {
+        const row = document.createElement("div");
+        row.className = "result-row";
+        row.style.backgroundColor = answerResult.correct ? "var(--light-light-green)" : "var(--light-red)";
 
-    const collapsibleContent = document.createElement("div");
-    collapsibleContent.className = "collapsible-content";
+        const collapsibleContent = document.createElement("div");
+        collapsibleContent.className = "collapsible-content";
 
-    const nameDiv = document.createElement("div");
-    nameDiv.className = "nameDiv";
-    
-    const nameP = document.createElement("p");
-    nameP.textContent = answerResult.commonName;
-    nameP.className = "nameP";
-    nameDiv.appendChild(nameP);
-    
-    const actualNameDiv = document.createElement("div");
-    actualNameDiv.className = "actualNameDiv";
-    
-    const actualNameP = document.createElement("p");
-    actualNameP.className = "actualNameP";
-    actualNameP.textContent = answerResult.scientificName;
-    actualNameDiv.appendChild(actualNameP);
-            
-    const expandDiv = document.createElement("div");
-    expandDiv.className = "expandDiv";
-    
-    const expandIcon = document.createElement("p");
-    expandIcon.className = "expand-icon";
-    expandIcon.textContent = "+";
-    expandDiv.appendChild(expandIcon);
-    
-    const namesContainer = document.createElement("div");
-    namesContainer.className = "namesContainer";
-    namesContainer.appendChild(nameDiv);
-    namesContainer.appendChild(actualNameDiv);
-    namesContainer.appendChild(expandDiv);
-    collapsibleContent.appendChild(namesContainer); 
-    
-    // Create a new image container for each result
-    const imageContainer = document.createElement("div");
-    imageContainer.className = "imageContainer";
-    
-    // Add the images to this container
-    answerResult.images.forEach((imageUrl) => {
-        const img = document.createElement("img");
-        img.src = imageUrl;
-        img.alt = "Plant image";
-        img.style.maxWidth = "100%";
-        img.style.height = "auto";
-        img.style.marginRight = "5px";
+        const nameDiv = document.createElement("div");
+        nameDiv.className = "nameDiv";
 
-        imageContainer.appendChild(img);
-    });
+        const nameP = document.createElement("p");
+        nameP.textContent = answerResult.commonName;
+        nameP.className = "nameP";
+        nameDiv.appendChild(nameP);
 
-        
-        //const image = document.createElement("img");
-//        image.className = "resultsImage";
-//        image.src = `http://bonap.net/MapGallery/County/${answerResult.scientificName}.png`;
-//        image.alt = `${answerResult.scientificName} distribution map`;
+        const actualNameDiv = document.createElement("div");
+        actualNameDiv.className = "actualNameDiv";
+
+        const actualNameP = document.createElement("p");
+        actualNameP.className = "actualNameP";
+        actualNameP.textContent = answerResult.scientificName;
+        actualNameDiv.appendChild(actualNameP);
+
+        const expandDiv = document.createElement("div");
+        expandDiv.className = "expandDiv";
+
+        const expandIcon = document.createElement("p");
+        expandIcon.className = "expand-icon";
+        expandIcon.textContent = "+";
+        expandDiv.appendChild(expandIcon);
+
+        const namesContainer = document.createElement("div");
+        namesContainer.className = "namesContainer";
+        namesContainer.appendChild(nameDiv);
+        namesContainer.appendChild(actualNameDiv);
+        namesContainer.appendChild(expandDiv);
+        collapsibleContent.appendChild(namesContainer); 
+
+        // Create a new image container for each result
+        const imageContainer = document.createElement("div");
+        imageContainer.className = "imageContainer";
+
+        // Add the images to this container
+        answerResult.images.forEach((imageUrl) => {
+            const img = document.createElement("img");
+            img.src = imageUrl;
+            img.alt = "Plant image";
+            img.style.maxWidth = "100%";
+            img.style.height = "auto";
+            img.style.marginRight = "5px";
+
+            imageContainer.appendChild(img);
+        });
+
         collapsibleContent.appendChild(imageContainer);
 
         row.appendChild(collapsibleContent);
@@ -421,7 +416,7 @@ answerResults.forEach((answerResult) => {
 
         // After appending to DOM, we can get the actual height
         const namesContainerHeight = namesContainer.getBoundingClientRect().height;
-        
+
         // Set the initial maxHeight to the computed height of namesContainer
         collapsibleContent.style.maxHeight = `${namesContainerHeight}px`;
 
@@ -434,7 +429,7 @@ answerResults.forEach((answerResult) => {
                 expandIcon.textContent = "+"; // Change back to '+' when collapsed
             }
         });
-        
+
         trackingElement.appendChild(row);
     });
 
