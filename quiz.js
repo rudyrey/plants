@@ -35,6 +35,8 @@ quizType = "Common Name"
 localStorage.setItem('quizType', quizType);
 window.onload = function() {
     // Check the presence of local storage variables
+    console.log(localStorage.getItem('state'));
+    console.log(getStateFromUrl());
     if (
         !localStorage.getItem('questionCount') &&
         !localStorage.getItem('correctCount') &&
@@ -42,10 +44,15 @@ window.onload = function() {
         !localStorage.getItem('shuffledOptions') &&
         !localStorage.getItem('randomPlantIndex') &&
         !localStorage.getItem('randomCommonNameIndex') &&
-        !localStorage.getItem('correctAnswer')
+        !localStorage.getItem('correctAnswer') 
     ) {
+        console.log('no local storage');
+        startQuiz();
+    } else if (localStorage.getItem('state') !== getStateFromUrl()) {
+        console.log('states do not match');
         startQuiz();
     } else {
+        console.log('display question');
         displayQuestion();
     }
 };
@@ -457,13 +464,8 @@ function displayQuestion() {
     // Check if questionCount is available in local storage
     questionCount = localStorage.getItem('questionCount') ? parseInt(localStorage.getItem('questionCount')) : 0;
     correctCount = localStorage.getItem('correctCount') ? parseInt(localStorage.getItem('correctCount')) : 0;
-    let stateFromLocalStorage = localStorage.getItem('state');
-    let stateFromURL = getStateFromUrl();
     
-    if (questionCount > 0 && stateFromURL !== stateFromLocalStorage) {
-        clearGameState();
-    }
-    
+    localStorage.setItem('state',getStateFromUrl());
     if (localStorage.getItem('answerArray')) {
         // Retrieve and parse from local storage if it exists
         answerArray = JSON.parse(localStorage.getItem('answerArray'));
@@ -513,7 +515,7 @@ function displayQuestion() {
     localStorage.setItem('randomPlantIndex', randomPlantIndex.toString());
     console.log("randomPlantIndex", randomPlantIndex);
     randomPlant = plants[randomPlantIndex];
-    
+    console.log(plants);
     // NOTE: IMPROVE THE WAY TO MANAGE DUPLICATES. MAINTAIN A LIST OF INDEXES THAT HAVE BEEN USED AND RERUN RANDOM GENERATOR IF THAT INDEX HAS ALREADY BEEN USED. 
     
     //set the common name that will be used
@@ -698,6 +700,7 @@ function displayQuestion() {
 }
 function startQuiz(type) {
     console.log('StartQuiz');
+    clearGameState();
     quizType = type;
     //loadUserStatistics();
     landingPage.style.display = "none";
@@ -720,14 +723,24 @@ function clearGameState() {
     answerResults = [];
     answerArray = [];
     correctAnswer = "";
+    console.log('remove randomPlantIndex');
     localStorage.removeItem('randomPlantIndex');
+    console.log('remove randomCommonNameIndex');
     localStorage.removeItem('randomCommonNameIndex');
+    console.log('remove correctAnswer');
     localStorage.removeItem('correctAnswer');
+    console.log('remove questionCount');
     localStorage.removeItem('questionCount');
+    console.log('remove correctCount');
     localStorage.removeItem('correctCount');
+    console.log('remove answerTracking');
     localStorage.removeItem('answerTracking');
+    console.log('remove answerResults');
     localStorage.removeItem('answerResults');
+    console.log('remove answerArray');
     localStorage.removeItem('answerArray');
+    localStorage.removeItem('shuffledOptions');
+    localStorage.removeItem('randomPlantIndex');
 }
 
 //appearance
