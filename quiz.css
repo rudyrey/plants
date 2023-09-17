@@ -3,7 +3,7 @@
     --light-green: #63A375;
     --blue: #006992;
     --red: #CA6680;
-    --light-blue: #EDC79B;
+    --sand: #EDC79B;
     --purple: #713E5A;
     --water: #a3cafb;
     --sienna: #d57a66;
@@ -57,8 +57,59 @@ img {
   border-radius: 0px;
   max-height: 300px;
 }
+ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0px; /* Adjust the value according to your desired gap size */
+    max-width: 400px; /* Adjust the value according to your desired maximum width */
+    margin-left: auto;
+    margin-right: auto;
+}
+li {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    text-align: center;
+}
 
-/* Results Rows */
+/* State Index */
+.state-menu {
+    overflow-y: scroll; /* Add a scrollbar if necessary */
+    margin-top:80px;
+    width:100%;
+}
+.state-menu ul {
+    list-style-type: none; 
+    padding: 0; 
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px; 
+    max-width: 330px;
+}
+.state-menu li {
+    padding: 8px;
+    text-align: center; 
+    cursor: pointer; 
+    justify-content: center;
+    align-items: center;
+    margin: 0px;
+    border-radius: 3px;
+    max-width:160px;
+}
+.state-button {
+    background-color: var(--water);
+}
+.city-button {
+    background-color: var(--sand);
+}
+.state-button:hover {
+  background-color: var(--blue);
+}
+.city-button:hover {
+  background-color: var(--sienna);
+}
+
+/* Results Page */
 .actualNameDiv {
     width: 50%;
     align-items: center;
@@ -74,7 +125,6 @@ img {
 .namesContainer {
     display: flex;
     align-items: center;
-    min-height: 24px;
 }
 .nameP {
     margin: 0px;
@@ -85,10 +135,16 @@ img {
     justify-content: center;
     font-style: italic;
 }
+#results {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5px;
+}
 .result-row {
     justify-content: space-between;
     margin-bottom: 5px;
-    padding: 2px;
+    padding: 4px;
     border-radius: 3px;
     align-items: center;
     cursor: pointer;
@@ -97,7 +153,7 @@ img {
   background-color: #eee;
 }
 .result-row p {
-    font-size: 14px;
+    font-size: 16px;
     margin: 0;
     line-height: 1; /* Add this line to improve the line spacing */
     padding: 3px;
@@ -125,6 +181,7 @@ img {
 .imageContainer{
     display: flex;
     overflow-x: scroll;
+    margin-top: 5px;
     max-width: 100%;
     max-height: 300px;
     scrollbar-width: thin;
@@ -151,14 +208,12 @@ img {
     cursor: pointer;
     user-select: none;
 }
-
-.bonap-map {
-  width: 160px;
-  margin: 0px;
-    
-}
-.correct-answer {
-  background-color: var(--light-green)
+.table {
+  width: 800px;
+  font-size:14px;
+  margin: 0 auto;  /* center table */
+  position:relative;
+  border: 0px;
 }
 .button-wrapper {
   display: flex;
@@ -169,15 +224,37 @@ img {
   font-size: 18px;
   padding: 10px 20px;
   border: none;
-  border-radius: 0px;
+  border-radius: 3px;
   background-color: var(--water);
   color: #333;
   cursor: pointer;
-  margin: 5px;
+  margin: 4px;
   transition: background-color 0.3s ease;
 }
 .button-wrapper button:hover {
   background-color: var(--water);
+}
+.apple-share-icon {
+    position: relative;
+    width: 40px;
+    height: 40px;
+}
+#share {
+  border: none;                    /* Remove any border */
+  padding: 0px 15px;                     /* Remove padding so button size fits image */
+}
+#share img {
+  height: 1.5em;                  /* Set image height to match button text */
+  vertical-align: middle;         /* Align image vertically with surrounding text */
+}
+
+.bonap-map {
+  width: 160px;
+  margin: 0px;
+    
+}
+.correct-answer {
+  background-color: var(--light-green)
 }
 .disabled {
     cursor: default;
@@ -247,7 +324,7 @@ img {
   background-color: #ccc; /* Background turns grey */
 }
 .menu.open {
-  height: 230px; /* Set to the desired height when open */
+  height: 255px; /* Set to the desired height when open */
 }
 .menu-spacer {
   border: 0;
@@ -267,6 +344,12 @@ img {
   margin-bottom: 4px;
   object-fit: cover; /* ensures the image maintains its aspect ratio */
 }
+#mainMenu {
+  cursor: pointer;
+  margin-left: 15px;
+}
+
+/* Quiz */
 .next-questions {
   width: 100%;
   height: 50px; /* Adjust the height as per your requirements */
@@ -276,208 +359,6 @@ img {
 }
 .option {
     cursor: pointer;
-}
-.search-bar-container {
-  display: flex;
-  justify-content: center; /* Align the search bar horizontally in the center */
-  padding: 5px; /* Add 5px padding around the container */
-  padding-top: 7px;
-}
-.share-wrapper {
-  display: flex;
-  justify-content: center;
-}
-.share-wrapper button {
-  margin-top: 20px;
-  font-size: 18px;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 0px;
-  background-color: var(--sienna);
-  color: #333;
-  cursor: pointer;
-  margin: 5px;
-  transition: background-color 0.3s ease;
-}
-.share-wrapper button:hover {
-  background-color: var(--blue);
-}
-.table {
-  width: 800px;
-  font-size:14px;
-  margin: 0 auto;  /* center table */
-  position:relative;
-  border: 0px;
-}
-.table th {
-  background-color: #333;
-  color: #fff;
-  border-bottom: 1px solid #ccc;
-  padding: 6px;
-  text-align: center;
-  border: 0px;
-}
-.table td {
-  border: 0px;
-  padding: 8px;
-  text-align: left;
-}
-.table tr:nth-child(even) {
-  background-color: #f2f2f2;
-}
-.table tr:hover {
-  background-color: #ddd;
-}
-.table td:first-child {
-  width: 200px;
-  max-width: 30%;
-  font-style: italic;
-}
-.top-bar {
-    top: 0; /* og */
-    left: 0; /* og */
-    width: 100%; /* og */
-    background-color: #f7f7f7; /* og */
-    padding: 5px 0; /* og */ /* Add 10px padding to the top and bottom */
-    box-shadow: 0px 0px 4px gray; /* og */ /* Remove the box-shadow */
-    border-bottom: 1px solid #ccc; /* og */ /* Add a thin gray line at the bottom */
-    display: flex; /* og */
-    flex-direction: row; /* og */ /* Change to row layout */
-    justify-content: center; /* og */
-    align-items: center; /* og */
-    z-index: 1000; /* og */
-    font-family: 'Libre Baskerville', serif; /* og */
-    color: #333; /* og */
-    position: fixed; /* og */
-    height: auto;
-    /* flex-direction: column; /* Change to column layout */
-}
-.title-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    flex-grow: 1;
-}
-.top-bar h1 {
-  font-family: 'Libre Baskerville', serif; /* og */
-  font-size: 36px; /* og */
-  color: #333; /* og */
-  margin: 0; /* og */
-  padding: 0; /* og */
-  margin-bottom: 0px;
-  text-align: center;
-}
-.top-bar h3 {
-  font-family: 'Libre Baskerville', serif;
-  font-size: 12px;
-  color: #333;
-  margin: -5px 0 0;
-  padding: 0;
-}
-.state-menu {
-  overflow-y: scroll; /* Add a scrollbar if necessary */
-}
-.state-menu ul {
-    list-style-type: none; /* og */
-    padding: 0; /* og */
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px; /* Adjust the value according to your desired gap size */
-    max-width: 300px; /* Adjust the value according to your desired maximum width */
-    margin-left: auto;
-    margin-right: auto;
-}
-.state-menu li {
-  padding: 10px; /* og */
-  text-align: center; /* og */
-  border-bottom: 1px solid #ccc; /* og */
-  cursor: pointer; /* og */
-  justify-content: center;
-  align-items: center;
-  /* padding: 5px 5px; */
-  margin: 0px;
-  background-color: var(--water);
-    border-radius: 3px;
-}
-.state-menu li:hover {
-  background-color: var(--blue);
-}
-.apple-share-icon {
-    position: relative;
-    width: 40px;
-    height: 40px;
-}
-.stats-button {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background-color: #fff;
-    border: none;
-    cursor: pointer;
-}
-.stats-modal {
-    display: none; /* Initially hidden */
-    position: fixed; /* Fixed position */
-    top: 0;
-    left: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    background-color: rgba(0,0,0,0.5); /* Black background with opacity */
-    z-index: 1000; /* Place it over everything else on the page */
-}
-.modal-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); /* Centering the modal */
-    padding: 20px;
-    background-color: #fff; /* White background for the content */
-    width: 80%; /* Use 80% of screen width, adjust as needed */
-    max-width: 500px; /* Maximum width of the modal content, adjust as needed */
-    border-radius: 8px; /* Optional: Rounded corners for the modal */
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Optional: Shadow for a bit of depth */
-}
-.close-button {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 24px;
-    cursor: pointer;
-}
-#landing {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px;
-}
-#results {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 5px 15px 15px 15px;
-}
-#quiz {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 5px;
-}
-#image-container {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-#image {
-  max-width: 100%;
-  max-height: calc(100vh - 400px); /* 100vh is the full height of the viewport, minus 40px for any additional padding/margin */
-  object-fit: contain; /* Ensures the image maintains its aspect ratio */
-}
-#search-bar {
-  width: 300px; /* Adjust the width as needed */
-  border: 1px solid #ccc; /* Optional: Add a border for better visibility */
 }
 #options ul {
     margin-top: 100px;
@@ -527,6 +408,143 @@ img {
 #see-results:hover {
     background-color: #696969;
 }
+#quiz {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5px;
+}
+#image-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#image {
+  max-width: 100%;
+  max-height: calc(100vh - 400px); /* 100vh is the full height of the viewport, minus 40px for any additional padding/margin */
+  object-fit: contain; /* Ensures the image maintains its aspect ratio */
+}
+
+/* Info */
+.search-bar-container {
+  display: flex;
+  justify-content: center; /* Align the search bar horizontally in the center */
+  padding: 5px; /* Add 5px padding around the container */
+  padding-top: 7px;
+    
+}
+#search-bar {
+    width: 100%; /* Adjust the width as needed */
+    max-width: 600px;
+    border: 1px solid #ccc; /* Optional: Add a border for better visibility */
+}
+.table th {
+  background-color: #333;
+  color: #fff;
+  border-bottom: 1px solid #ccc;
+  padding: 6px;
+  text-align: center;
+  border: 0px;
+}
+.table td {
+  border: 0px;
+  padding: 8px;
+  text-align: left;
+}
+.table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+.table tr:hover {
+  background-color: #ddd;
+}
+.table td:first-child {
+  width: 200px;
+  max-width: 30%;
+  font-style: italic;
+}
+
+/* Top Bar */
+.top-bar {
+    top: 0; /* og */
+    left: 0; /* og */
+    width: 100%; /* og */
+    background-color: #f7f7f7; /* og */
+    padding: 5px 0; /* og */ /* Add 10px padding to the top and bottom */
+    box-shadow: 0px 0px 4px gray; /* og */ /* Remove the box-shadow */
+    border-bottom: 1px solid #ccc; /* og */ /* Add a thin gray line at the bottom */
+    display: flex; /* og */
+    flex-direction: row; /* og */ /* Change to row layout */
+    justify-content: center; /* og */
+    align-items: center; /* og */
+    z-index: 1000; /* og */
+    font-family: 'Libre Baskerville', serif; /* og */
+    color: #333; /* og */
+    position: fixed; /* og */
+    height: auto;
+    /* flex-direction: column; /* Change to column layout */
+}
+.title-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+}
+.top-bar h1 {
+  font-family: 'Libre Baskerville', serif; /* og */
+  font-size: 36px; /* og */
+  color: #333; /* og */
+  margin: 0; /* og */
+  padding: 0; /* og */
+  margin-bottom: 0px;
+  text-align: center;
+}
+.top-bar h3 {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 12px;
+  color: #333;
+  margin: -5px 0 0;
+  padding: 0;
+}
+.stats-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #fff;
+    border: none;
+    cursor: pointer;
+}
+.stats-modal {
+    display: none; /* Initially hidden */
+    position: fixed; /* Fixed position */
+    top: 0;
+    left: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+    z-index: 1000; /* Place it over everything else on the page */
+}
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centering the modal */
+    padding: 20px;
+    background-color: #fff; /* White background for the content */
+    width: 80%; /* Use 80% of screen width, adjust as needed */
+    max-width: 500px; /* Maximum width of the modal content, adjust as needed */
+    border-radius: 8px; /* Optional: Rounded corners for the modal */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Optional: Shadow for a bit of depth */
+}
+
+#landing {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
 #tracking-container {
   max-width: 375px; /* Width of an iPhone */
   margin: 0 auto;
@@ -553,18 +571,7 @@ img {
 #image-scroll-container-bonap img {
   max-height: 200px;
 }
-#share {
-  border: none;                    /* Remove any border */
-  padding: 0px 15px;                     /* Remove padding so button size fits image */
-}
-#share img {
-  height: 1.5em;                  /* Set image height to match button text */
-  vertical-align: middle;         /* Align image vertically with surrounding text */
-}
-#mainMenu {
-  cursor: pointer;
-  margin-left: 15px;
-}
+
 #statsButton {
   cursor: pointer;
     margin-right: 15px;
@@ -574,19 +581,17 @@ img {
     width: 24px;
     height: 24px;
 }
-@media (max-width: 767px) {
-  ul {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0px; /* Adjust the value according to your desired gap size */
-    max-width: 400px; /* Adjust the value according to your desired maximum width */
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  li {
-    display: flex; justify-content: center; align-items: center; text-align: center;
-  }
+@media (min-width: 690px) {
+    .state-menu ul {
+        grid-template-columns: repeat(4, 1fr);
+        max-width: 670px;
+    }
+}
+@media (min-width: 520px) and (max-width: 690px) {
+    .state-menu ul {
+        grid-template-columns: repeat(3, 1fr);
+        max-width: 500px;
+    }
 }
 @media only screen and (max-width: 430px) {
     .table {
@@ -599,6 +604,8 @@ img {
         width: 150px;
     }
 }
+
+/* Progress Bar */
 #progress-bar {
     display: flex;
     height: 5px;
@@ -618,7 +625,6 @@ img {
     border-right: 1px solid #ccc;
     border-color: white;
 }
-/* Colors for different states of questions */
 .progress-section.correct {
     background-color: var(--light-light-green);
 }
@@ -627,4 +633,12 @@ img {
 }
 .progress-section.current {
     background-color: var(--water);
+}
+#plant-dropdown {
+    width: 100%;
+    padding: 12px 16px;
+    margin-top: 20px;
+    border: 2px solid var(--blue);
+    border-radius: 4px;
+    font-size: 16px;
 }

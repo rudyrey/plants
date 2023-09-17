@@ -1,0 +1,176 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <link href="https://em-content.zobj.net/thumbs/320/microsoft/319/seedling_1f331.png" rel="icon"/>
+    <title>Nativle Info</title>
+    <link href="quiz.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,600,0,0" rel="stylesheet"/>
+</head>
+<body>
+<div class="top-bar">
+    <div class="menu-btn" id="mainMenu">
+        <svg class="NavIcon-module_burgerSvg__j9Cig" fill="none" height="22" viewbox="0 0 30 22" width="26" xmlns="http://www.w3.org/2000/svg">
+        <rect fill="black" height="4" rx="2" width="26" x="0.172974"></rect>
+        <rect fill="black" height="4" rx="2" width="26" x="0.172974" y="9"></rect>
+        <rect fill="black" height="4" rx="2" width="26" x="0.172974" y="18"></rect>
+        </svg>
+    </div>
+    <div class="title-container">
+        <h1 id="title">Nativle<span style="color: var(--sienna);">Info</span></h1>
+        <h3>native plant information</h3>
+    </div>
+    <div class="menu-btn" id="statsButton">
+        <span class="material-symbols-outlined"></span>
+    </div>
+</div>
+<div class="menu" id="menu">
+    <hr class="menu-spacer"/>
+    <a class="menu-link" href="index.html"><img alt="Nativle" class="menu-icon" src="https://em-content.zobj.net/thumbs/320/microsoft/319/seedling_1f331.png"/>Nativle Original</a>
+    <a class="menu-link" href="pro_index.html"><img alt="Nativle" class="menu-icon" src="https://em-content.zobj.net/thumbs/320/microsoft/319/seedling_1f331.png"/>Nativle Pro</a>
+    <a class="menu-link" href="map-quiz.html"><img alt="Nativle" class="menu-icon" src="https://em-content.zobj.net/thumbs/320/microsoft/319/seedling_1f331.png"/>Nativle Maps</a>
+    <hr class="menu-divider"/> <!-- Add the divider -->
+    <a href="https://gardenforwildlife.com"><img alt="Garden for Wildlife" class="menu-icon" src="https://gardenforwildlife.com/cdn/shop/files/GFW-Favicon_32x32.png?v=1642637359"/>Garden for Wildlife</a> <!-- Link with image -->
+    <a href="https://seedsource.com/"><img alt="Native American Seed" class="menu-icon" src="https://cdn11.bigcommerce.com/s-9ht3qzdye/product_images/favicon.png?t=1607460759"/>Native American Seed</a> <!-- Link with image -->
+    <a href="https://nativeenhancements.com/"><img alt="Native Enhancements" class="menu-icon" src="https://www.google.com/s2/favicons?domain=nativeenhancements.com"/>Native Enhancements</a> <!-- Link with image -->
+    <hr class="menu-divider"/> <!-- Add the divider -->
+    <a href="https://gardenia.net"><img alt="Gardenia" class="menu-icon" src="https://www.google.com/s2/favicons?domain=gardenia.net"/>Gardenia</a> <!-- Link with image -->
+    <a href="http://bonap.net/"><img alt="BONAP" class="menu-icon" src="http://bonap.org/Homepage/lefteagle.jpg"/>Biota of North America</a> <!-- Link with image -->
+    <a href="https://wildflower.org/"><img alt="Wildflower Center" class="menu-icon" src="https://www.google.com/s2/favicons?domain=wildflower.org"/>Wildflower Center</a> <!-- Link with image -->
+</div>
+<div class="main-content">
+    <div class="search-bar-container">
+      <input type="text" id="search-bar" placeholder="Search for plant">
+    </div>
+    <table border="1" id="plants" class="table sortable">
+        <thead>
+            <tr style="text-align: right;">
+                <th id="name">Plant Name</th>
+                <th id="common">Common Names</th>
+            </tr>
+        </thead>
+        <tbody id="table-body"></tbody>
+    </table>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script src="https://www.kryogenix.org/code/browser/sorttable/sorttable.js"></script>
+<script>
+    const originalData = [];
+
+    // Function to filter the table rows based on the search input
+    function filterTable(searchValue) {
+        const filteredRows = originalData.filter(row =>
+          row.toLowerCase().includes(searchValue.toLowerCase())
+        );
+
+        // Update the table body with filtered rows
+        $('#table-body').html(filteredRows.join(''));
+
+        // Apply the click event to the new rows for expanding images
+        $('.plant-row').off('click').click(function() {
+          if ($(this).next('.image-row-table').length) {
+            $(this).next('.image-row-table').remove();
+          } else {
+            $('.image-row-table').remove();
+            var imageRow = $('<div class="image-row"></div>');
+            var images = $(this).data('images').split(',');
+            for (var i = 0; i < images.length; i++) {
+              imageRow.append('<img src="' + images[i] + '">');
+            }
+            var imageContainer = $('<div class="image-container"></div>');
+            imageContainer.append(imageRow);
+            var imageTableRow = $('<tr class="image-row-table"><td colspan="2" class="contain-td"></td></tr>');
+            imageTableRow.find('td').append(imageContainer);
+            $(this).after(imageTableRow);
+          }
+        });
+
+        // Trigger a click on the "name" header to sort the table by the first column
+        document.getElementById('common').click();
+        document.getElementById('name').click();
+    }
+
+    $(document).ready(function() {
+        // Initial filtering with an empty search value to show all rows
+        filterTable('');
+        
+        // Handle input in the search bar
+        $('#search-bar').on('input', function() {
+            const searchValue = $(this).val();
+            filterTable(searchValue);
+            document.getElementById('common').click();
+            document.getElementById('name').click();
+        });
+    });
+
+</script>
+
+<script>
+    // Get the menu and the menu button
+    var menu = document.getElementById('menu');
+    var btn = document.querySelector('.menu-btn');
+
+    // Add an event listener to the menu button
+    btn.addEventListener('click', function(event) {
+        // Toggle the 'open' class on the menu
+        menu.classList.toggle('open');
+
+        // Prevents the event from bubbling up to the document
+        event.stopPropagation();
+    });
+
+    // New event listener for the document
+    document.addEventListener('click', function(event) {
+        if (!menu.contains(event.target)) {
+            // If the clicked target is not within the menu, remove 'open' class from the menu
+            menu.classList.remove('open');
+        }
+    });
+</script>
+
+<script src="modified_quiz-json.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+
+        // Function to generate a table row for a plant
+        function generateTableRow(plant) {
+            const tr = document.createElement('tr');
+            tr.className = 'plant-row';
+            tr.setAttribute('data-images', plant.Images.join(', '));
+            
+            const tdScientificName = document.createElement('td');
+            tdScientificName.textContent = plant["Scientific Name"];
+            tr.appendChild(tdScientificName);
+            
+            const tdCommonName = document.createElement('td');
+            tdCommonName.textContent = plant["Common Name"].join(', ');
+            tr.appendChild(tdCommonName);
+            
+            return tr.outerHTML;
+        }
+
+        // Populate the originalData array
+        jsonData.plants.forEach(plant => {
+            originalData.push(generateTableRow(plant));
+        });
+        
+        // Append the rows to the table
+        $('#table-body').html(originalData.join(''));
+        filterTable('');
+        document.getElementById('name').click();
+
+    });
+</script>
+
+
+</body>
+</html>

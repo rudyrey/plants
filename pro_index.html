@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <link href="https://em-content.zobj.net/thumbs/320/microsoft/319/seedling_1f331.png" rel="icon"/>
+    <title>Nativle - Plant Quiz</title>
+    <link href="quiz.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,600,0,0" rel="stylesheet"/>
+</head>
+<body>
+  <div class="top-bar">
+      <div class="menu-btn" id="mainMenu">
+          <svg class="NavIcon-module_burgerSvg__j9Cig" width="26" height="22" viewBox="0 0 30 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="0.172974" width="26" height="4" rx="2" fill="black"></rect>
+              <rect x="0.172974" y="9" width="26" height="4" rx="2" fill="black"></rect>
+              <rect x="0.172974" y="18" width="26" height="4" rx="2" fill="black"></rect>
+          </svg>
+      </div>
+      <div class="title-container">
+          <h1 id="title">Nativle<span style="color: var(--sienna);">Pro</span></h1>
+          <h3>a native plant quiz</h3>
+      </div>
+      <div class="menu-btn" id="statsButton">
+        <span class="material-symbols-outlined"></span>
+      </div>
+  </div>
+  <div id="statsModal" class="stats-modal">
+      <div class="modal-content">
+          <span id="closeModal" class="close-button">&times;</span>
+          <!-- Stats will be inserted here -->
+          <div id="playerStats"></div>
+      </div>
+  </div>
+    <div id="menu" class="menu">
+      <hr class="menu-spacer">
+        <a class="menu-link" href="index.html"><img alt="Nativle" class="menu-icon" src="https://em-content.zobj.net/thumbs/320/microsoft/319/seedling_1f331.png"/>Nativle Original</a>
+        <a href="map-quiz.html" class="menu-link"><img src="https://em-content.zobj.net/thumbs/320/microsoft/319/seedling_1f331.png" alt="Nativle" class="menu-icon">Nativle Maps</a>
+        <a href="info.html" class="menu-link"><img src="https://em-content.zobj.net/thumbs/320/microsoft/319/seedling_1f331.png" alt="Nativle" class="menu-icon">Nativle Info</a>
+        <hr class="menu-divider"> <!-- Add the divider -->
+        <a href="https://gardenforwildlife.com"><img src="https://gardenforwildlife.com/cdn/shop/files/GFW-Favicon_32x32.png?v=1642637359" alt="Garden for Wildlife" class="menu-icon">Garden for Wildlife</a> <!-- Link with image -->
+        <a href="https://seedsource.com/"><img src="https://cdn11.bigcommerce.com/s-9ht3qzdye/product_images/favicon.png?t=1607460759" alt="Native American Seed" class="menu-icon">Native American Seed</a> <!-- Link with image -->
+        <a href="https://nativeenhancements.com/"><img src="https://www.google.com/s2/favicons?domain=nativeenhancements.com" alt="Native Enhancements" class="menu-icon">Native Enhancements</a> <!-- Link with image -->
+        <hr class="menu-divider"> <!-- Add the divider -->
+        <a href="https://gardenia.net"><img src="https://www.google.com/s2/favicons?domain=gardenia.net" alt="Gardenia" class="menu-icon">Gardenia</a> <!-- Link with image -->
+        <a href="http://bonap.net/"><img src="http://bonap.org/Homepage/lefteagle.jpg" alt="BONAP" class="menu-icon">Biota of North America</a> <!-- Link with image -->
+        <a href="https://wildflower.org/"><img src="https://www.google.com/s2/favicons?domain=wildflower.org" alt="Wildflower Center" class="menu-icon">Wildflower Center</a> <!-- Link with image -->
+    </div>
+
+    <div class="state-menu">
+        <ul id="state-list">
+            <li class="city-button" data-state="HTX">Houston</li>    
+            <li class="state-button" data-state="AL">Alabama</li>
+            <li class="state-button" data-state="AZ">Arizona</li>
+            <li class="state-button" data-state="AR">Arkansas</li>
+            <li class="state-button" data-state="CA">California</li>
+            <li class="state-button" data-state="CO">Colorado</li>
+            <li class="state-button" data-state="CT">Connecticut</li>
+            <li class="state-button" data-state="DE">Delaware</li>
+            <li class="state-button" data-state="FL">Florida</li>
+            <li class="state-button" data-state="GA">Georgia</li>
+            <li class="state-button" data-state="ID">Idaho</li>
+            <li class="state-button" data-state="IL">Illinois</li>
+            <li class="state-button" data-state="IL">Illinois</li>
+            <li class="state-button" data-state="IN">Indiana</li>
+            <li class="state-button" data-state="IA">Iowa</li>
+            <li class="state-button" data-state="KS">Kansas</li>
+            <li class="state-button" data-state="KY">Kentucky</li>
+            <li class="state-button" data-state="LA">Louisiana</li>
+            <li class="state-button" data-state="ME">Maine</li>
+            <li class="state-button" data-state="MD">Maryland</li>
+            <li class="state-button" data-state="MA">Massachusetts</li>
+            <li class="state-button" data-state="MI">Michigan</li>
+            <li class="state-button" data-state="MN">Minnesota</li>
+            <li class="state-button" data-state="MS">Mississippi</li>
+            <li class="state-button" data-state="MO">Missouri</li>
+            <li class="state-button" data-state="MT">Montana</li>
+            <li class="state-button" data-state="NE">Nebraska</li>
+            <li class="state-button" data-state="NV">Nevada</li>
+            <li class="state-button" data-state="NH">New Hampshire</li>
+            <li class="state-button" data-state="NJ">New Jersey</li>
+            <li class="state-button" data-state="NM">New Mexico</li>
+            <li class="state-button" data-state="NY">New York</li>
+            <li class="state-button" data-state="NC">North Carolina</li>
+            <li class="state-button" data-state="ND">North Dakota</li>
+            <li class="state-button" data-state="OH">Ohio</li>
+            <li class="state-button" data-state="OK">Oklahoma</li>
+            <li class="state-button" data-state="OR">Oregon</li>
+            <li class="state-button" data-state="PA">Pennsylvania</li>
+            <li class="state-button" data-state="RI">Rhode Island</li>
+            <li class="state-button" data-state="SC">South Carolina</li>
+            <li class="state-button" data-state="SD">South Dakota</li>
+            <li class="state-button" data-state="TN">Tennessee</li>
+            <li class="state-button" data-state="TX">Texas</li>
+            <li class="state-button" data-state="UT">Utah</li>
+            <li class="state-button" data-state="VT">Vermont</li>
+            <li class="state-button" data-state="VA">Virginia</li>
+            <li class="state-button" data-state="WA">Washington</li>
+            <li class="state-button" data-state="WV">West Virginia</li>
+            <li class="state-button" data-state="WI">Wisconsin</li>
+            <li class="state-button" data-state="WY">Wyoming</li>
+       </ul>
+   <script>
+     const stateList = document.getElementById("state-list");
+     stateList.addEventListener("click", (event) => {
+       const target = event.target;
+       if (target.tagName === "LI") {
+         const stateCode = target.dataset.state;
+         window.location.href = `pro_quiz.html?state=${stateCode}`;
+       }
+     });
+   </script>
+    <script>
+    // Get the menu and the menu button
+    var menu = document.getElementById('menu');
+    var btn = document.querySelector('.menu-btn');
+
+    // Add an event listener to the menu button
+    btn.addEventListener('click', function(event) {
+        // Toggle the 'open' class on the menu
+        menu.classList.toggle('open');
+
+        // Prevents the event from bubbling up to the document
+        event.stopPropagation();
+    });
+
+    // New event listener for the document
+    document.addEventListener('click', function(event) {
+        if (!menu.contains(event.target)) {
+            // If the clicked target is not within the menu, remove 'open' class from the menu
+            menu.classList.remove('open');
+        }
+    });
+    </script>
+ </body>
+ </html>

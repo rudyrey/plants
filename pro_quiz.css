@@ -1,0 +1,740 @@
+:root {
+    --dark-green: #2a7f62;
+    --light-green: #63A375;
+    --blue: #006992;
+    --red: #CA6680;
+    --sand: #EDC79B;
+    --purple: #713E5A;
+    --water: #a3cafb;
+    --sienna: #d57a66;
+    --light-red: #FFB6C1;
+    --light-light-green: #90EE90;
+    --light-gray: #cccccc;
+}
+button {
+  font-size: 14px;
+  padding: 4px 4px;
+  border: none;
+  border-radius: 3px;
+  background-color: var(--water);
+  color: #333;
+  cursor: pointer;
+  margin-right: 5px;
+  transition: background-color 0.3s ease;
+}
+button:hover {
+  background-color: var(--blue);
+}
+h2 {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 10px;
+  padding: 0;
+}
+ul {
+    padding: 0;
+}
+p {
+  text-align: center;
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+body {
+  font-family: "Segoe UI", "Helvetica Neue", "Arial", sans-serif;
+  font-size: 18px;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f0f0;
+}
+img {
+  margin-bottom: 0px;
+  border-radius: 0px;
+  max-height: 300px;
+}
+li {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    text-align: center;
+}
+
+/* Results Page */
+.actualNameDiv {
+    width: 50%;
+    align-items: center;
+}
+.nameDiv {
+    width: 50%;
+    align-items: center;
+}
+.expandDiv {
+    width: 5%;
+    align-items: center;
+}
+.namesContainer {
+    display: flex;
+    align-items: center;
+}
+.nameP {
+    margin: 0px;
+    justify-content: center;
+}
+.actualNameP {
+    margin: 0px;
+    justify-content: center;
+    font-style: italic;
+}
+#results {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5px;
+}
+.result-row {
+    justify-content: space-between;
+    margin-bottom: 5px;
+    padding: 4px;
+    border-radius: 3px;
+    align-items: center;
+    cursor: pointer;
+}
+.result-row:hover {
+  background-color: #eee;
+}
+.result-row p {
+    font-size: 16px;
+    margin: 0;
+    line-height: 1; /* Add this line to improve the line spacing */
+    padding: 3px;
+    /*width: 50%;*/
+    text-align: center;
+}
+.result-row.expanded .expand-icon {
+    content: "-";
+}
+.collapsible-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+}
+.collapsible-content p {
+    margin: 0px;
+}
+.resultsImage {
+    width = 100%;
+    margin-top = 10px;
+}
+.imageContainer{
+    display: flex;
+    overflow-x: scroll;
+    margin-top: 5px;
+    max-width: 100%;
+    max-height: 300px;
+    scrollbar-width: thin;
+}
+.image-row {
+  display: flex;
+  height: 200px;
+  overflow-x: auto;
+  width:780px;
+  position:relative;
+}
+.image-row img {
+  height: 100%;
+  flex-shrink: 0; /* prevents images from shrinking when they overflow */
+  min-width: auto; /* allows images to maintain their natural width */
+  margin-right: 5px; /* add right margin to create a gap between images */
+}
+.expand-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    padding: 5px;
+    cursor: pointer;
+    user-select: none;
+}
+.table {
+  width: 800px;
+  font-size:14px;
+  margin: 0 auto;  /* center table */
+  position:relative;
+  border: 0px;
+}
+.button-wrapper {
+  display: flex;
+  justify-content: center;
+}
+.button-wrapper button {
+  margin-top: 20px;
+  font-size: 18px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 3px;
+  background-color: var(--water);
+  color: #333;
+  cursor: pointer;
+  margin: 4px;
+  transition: background-color 0.3s ease;
+}
+.button-wrapper button:hover {
+  background-color: var(--water);
+}
+.apple-share-icon {
+    position: relative;
+    width: 40px;
+    height: 40px;
+}
+#share {
+  border: none;                    /* Remove any border */
+  padding: 0px 15px;                     /* Remove padding so button size fits image */
+}
+#share img {
+  height: 1.5em;                  /* Set image height to match button text */
+  vertical-align: middle;         /* Align image vertically with surrounding text */
+}
+
+.bonap-map {
+  width: 160px;
+  margin: 0px;
+    
+}
+.correct-answer {
+  background-color: var(--light-green)
+}
+.disabled {
+    cursor: default;
+    pointer-events: none;
+}
+.disabled:hover {
+    background-color: inherit;
+}
+.image-scroll-container {
+  display: flex;
+  overflow-x: scroll;
+  max-width: 100%;
+  max-height: 300px;
+  scrollbar-width: thin;
+}
+.image-scroll-container::-webkit-scrollbar {
+  height: 8px;
+}
+.image-scroll-container::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 3px;
+}
+.main-content {
+    margin-top: 65px;
+}
+.message {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 10px;
+    border-radius: 0px;
+    font-size: 14px;
+    display: none;
+}
+
+/* Menu */
+.menu {
+  height: 0px;
+  width: 200px;
+  position: fixed;
+  z-index: 1;
+  top: 60px;
+  left: 0;
+  background-color: #fff;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  transition: 0.5s;
+  border: 1px solid grey;
+  font-family: 'Libre Baskerville', serif;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Add this line */
+}
+.menu a {
+  padding: 0px 0px 0px 5px;
+  text-decoration: none;
+  font-size: 12px; /* Smaller text */
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+  white-space: nowrap; /* Prevents text from wrapping */
+  vertical-align: middle;
+}
+.menu a:hover {
+  color: #000; /* Text stays black */
+  background-color: #ccc; /* Background turns grey */
+}
+.menu.open {
+  height: 255px; /* Set to the desired height when open */
+}
+.menu-spacer {
+  border: 0;
+  border-top: 0px solid #ccc; /* set the color of the divider */
+  margin: 6px 0; /* add some margin to separate the links */
+}
+.menu-divider {
+  border: 0;
+  border-top: 1px solid #ccc; /* set the color of the divider */
+  margin: 5px 0; /* add some margin to separate the links */
+}
+.menu-icon {
+  height: 20px;
+  width: 20px;
+  margin-right: 8px; /* add some space between the icon and the text */
+  vertical-align: middle; /* align the icon with the text */
+  margin-bottom: 4px;
+  object-fit: cover; /* ensures the image maintains its aspect ratio */
+}
+#mainMenu {
+  cursor: pointer;
+  margin-left: 15px;
+}
+
+/* Quiz */
+.next-questions {
+  width: 100%;
+  height: 50px; /* Adjust the height as per your requirements */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.option {
+    cursor: pointer;
+}
+#options ul {
+    margin-bottom: 0px;
+}
+#options li:hover {
+    background-color: var(--blue);
+}
+#options li {
+  padding: 10px;
+  margin: 5px;
+  background-color: var(--water);
+  border-radius: 3px;
+  cursor: pointer;
+  color: #333;
+  transition: background-color 0.3s ease;
+}
+#next-question {
+    position: flex;
+    display: none;
+    padding: 10px 20px;
+    background-color: #808080;
+    color: white;
+    cursor: pointer;
+    justify-content: center; 
+    align-items: center; 
+    text-align: center;
+    width: 290px;
+}
+#next-question:hover {
+    background-color: #696969;
+}
+#see-results {
+    position: flex;
+    display: none;
+    padding: 10px 20px;
+    background-color: #808080;
+    color: white;
+    cursor: pointer;
+    justify-content: center; 
+    align-items: center; 
+    text-align: center;
+    width: 290px;
+    margin-bottom:10px;
+}
+#see-results:hover {
+    background-color: #696969;
+}
+#quiz {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5px;
+}
+#image-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#image {
+  max-width: 100%;
+  max-height: calc(100vh - 400px); /* 100vh is the full height of the viewport, minus 40px for any additional padding/margin */
+  object-fit: contain; /* Ensures the image maintains its aspect ratio */
+}
+
+/* Info */
+.search-bar-container {
+  display: flex;
+  justify-content: center; /* Align the search bar horizontally in the center */
+  padding: 5px; /* Add 5px padding around the container */
+  padding-top: 7px;
+}
+#search-bar {
+  width: 300px; /* Adjust the width as needed */
+  border: 1px solid #ccc; /* Optional: Add a border for better visibility */
+}
+.table th {
+  background-color: #333;
+  color: #fff;
+  border-bottom: 1px solid #ccc;
+  padding: 6px;
+  text-align: center;
+  border: 0px;
+}
+.table td {
+  border: 0px;
+  padding: 8px;
+  text-align: left;
+}
+.table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+.table tr:hover {
+  background-color: #ddd;
+}
+.table td:first-child {
+  width: 200px;
+  max-width: 30%;
+  font-style: italic;
+}
+
+/* Top Bar */
+.top-bar {
+    top: 0; /* og */
+    left: 0; /* og */
+    width: 100%; /* og */
+    background-color: #f7f7f7; /* og */
+    padding: 5px 0; /* og */ /* Add 10px padding to the top and bottom */
+    box-shadow: 0px 0px 4px gray; /* og */ /* Remove the box-shadow */
+    border-bottom: 1px solid #ccc; /* og */ /* Add a thin gray line at the bottom */
+    display: flex; /* og */
+    flex-direction: row; /* og */ /* Change to row layout */
+    justify-content: center; /* og */
+    align-items: center; /* og */
+    z-index: 1000; /* og */
+    font-family: 'Libre Baskerville', serif; /* og */
+    color: #333; /* og */
+    position: fixed; /* og */
+    height: auto;
+    /* flex-direction: column; /* Change to column layout */
+}
+.title-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+}
+.top-bar h1 {
+    font-family: 'Libre Baskerville', serif; /* og */
+    font-size: 31px; /* og */
+    color: #333; /* og */
+    margin: 0; /* og */
+    padding: 0; /* og */
+    margin-top: 2px;
+    margin-bottom: 3px;
+    text-align: center;
+}
+.top-bar h3 {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 12px;
+  color: #333;
+  margin: -5px 0 0;
+  padding: 0;
+}
+.stats-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #fff;
+    border: none;
+    cursor: pointer;
+}
+.stats-modal {
+    display: none; /* Initially hidden */
+    position: fixed; /* Fixed position */
+    top: 0;
+    left: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+    z-index: 1000; /* Place it over everything else on the page */
+}
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centering the modal */
+    padding: 20px;
+    background-color: #fff; /* White background for the content */
+    width: 80%; /* Use 80% of screen width, adjust as needed */
+    max-width: 500px; /* Maximum width of the modal content, adjust as needed */
+    border-radius: 8px; /* Optional: Rounded corners for the modal */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Optional: Shadow for a bit of depth */
+    max-height: 90%;
+    height:714px;
+    overflow-y: auto; /* Add vertical scrollbar if content overflows */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+/* Styling for the unordered list inside the modal */
+.modal-content ul {
+    list-style-type: none; /* Remove the default bullets */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin but keep some space at the bottom */
+    border-top: 1px solid #e0e0e0; /* Optional top border for a clean look */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+/* Styling for the list items inside the modal */
+.modal-content li {
+    padding: 0; /* Add some vertical padding for spacing */
+    border-bottom: 1px solid #e0e0e0; /* Bottom border for separation */
+    font-size: 12px; /* Adjust text size if necessary */
+    margin: 0px;
+    background-color: "green";
+    border-radius: 0px;
+    color: #333;
+    transition: background-color 0.3s ease;
+}
+.modal-content h2 {
+    font-family: "Segoe UI", "Helvetica Neue", "Arial", sans-serif;
+    text-align: center; 
+    margin: 7px;
+}
+.close-button {
+    position: absolute;
+    top: 0px;
+    right: 7px;
+    font-size: 24px;
+    cursor: pointer;
+    display:none;
+}
+#landing {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+#tracking-container {
+  max-width: 375px; /* Width of an iPhone */
+  margin: 0 auto;
+}
+#images {
+  display: flex;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+#quiz {
+  display: flex; /* Add this line */
+}
+#results {
+  display: none;
+}
+#name-container p {
+    margin-bottom: 5px;
+}
+#image {
+  max-width: 100%;
+  max-height: 300px; /* 100vh is the full height of the viewport, minus 40px for any additional padding/margin */
+  object-fit: contain; /* Ensures the image maintains its aspect ratio */
+}
+#image-scroll-container-bonap img {
+  max-height: 200px;
+}
+
+#statsButton {
+  cursor: pointer;
+    margin-right: 15px;
+}
+#statsPlaceholder {
+    margin-right: 15px;
+    width: 24px;
+    height: 24px;
+}
+.stat-container {
+        border: 1px solid #ccc;  /* Adds a border around the histogram */
+        background-color: #f5f5f5;  /* Sets a light grey background color */
+        padding: 0px 5px 5px 5px;  /* Adds some spacing inside the histogram box */
+        margin-bottom: 15px;  /* Adds some space below each histogram */
+        border-radius: 3px;  /* Rounds the corners for a softer appearance */
+    }
+.top-stat-container {
+    border: 1px solid #ccc;  /* Adds a border around the histogram */
+    background-color: #f5f5f5;  /* Sets a light grey background color */
+    padding: 5px 5px 0px 5px;  /* Adds some spacing inside the histogram box */
+    margin-bottom: 15px;  /* Adds some space below each histogram */
+    border-radius: 3px;  /* Rounds the corners for a softer appearance */
+    display: flex;              /* Lays out the children (stat-item divs) horizontally */
+    justify-content: space-between; /* Spreads out the items evenly */
+}
+.stat-item {
+    flex: 1;                    /* Allows each item to take up equal width */
+    text-align: center;         /* Centers the text */
+    margin: 0 10px;             /* Adds some margin between each item for spacing */
+}
+
+.stat-category {
+    font-size: 0.8em;           /* Smaller font for the category */
+    margin-bottom: 5px;         /* Spacing between category and value */
+}
+
+.stat-value {
+    font-size: 1.5em;           /* Bigger font for the value */
+    margin-bottom: 5px;
+}
+/* Optionally: Add some hover effect to list items for better interactivity */
+.modal-content li:hover {
+    background-color: "white"; /* Light gray background on hover */
+}
+.histogram-bar-container {
+    display: flex;
+    align-items: center;
+    margin: 5px 0;
+}
+
+.histogram-bar {
+    background-color: #4CAF50;
+    width: 0%; /* Set this with JavaScript */
+    height: 20px;
+    transition: width 0.4s; /* Smooth transition */
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* Aligns content to the right */
+    color: white;
+    font-weight: bold;
+    min-width: 20px; /* To fit a single digit */
+    border-radius: 5px;
+}
+.histogram-bar.zero {
+    background-color: gray;
+}
+.scoreCountHist {
+    display: flex;       /* Ensures children are centered */
+    align-items: center; /* Vertically center the content */
+    justify-content: center; /* Horizontally center the content */
+    padding-right: 5px; /* Padding on the right side */
+    font-size:16px;
+}
+.scoreValueHist {
+    width: 16px;
+    display: flex;       /* Ensures children are centered */
+    align-items: center; /* Vertically center the content */
+    justify-content: center; /* Horizontally center the content */
+    padding-right: 5px; /* Padding on the right side */
+    font-weight: bold;
+    font-size:16px;
+}
+@media (min-width: 690px) {
+    .state-menu ul {
+        grid-template-columns: repeat(4, 1fr);
+        max-width: 670px;
+    }
+}
+@media (min-width: 520px) and (max-width: 690px) {
+    .state-menu ul {
+        grid-template-columns: repeat(3, 1fr);
+        max-width: 500px;
+    }
+}
+@media only screen and (max-width: 430px) {
+    .table {
+        width: 375px; /* Adjust table width for iPhone */
+    }
+    .image-row {
+        width: 355px; /* Adjust image row width for iPhone */
+    }
+    .table td:first-child {
+        width: 150px;
+    }
+}
+
+/* Progress Bar */
+#progress-bar {
+    display: flex;
+    height: 5px;
+    width: 100%;
+    border: 1px solid #ccc;
+}
+.progress-section {
+    flex: 1;  /* This ensures each section takes up an equal amount of space */
+    background-color: lightgray;  /* Default background color */
+    border-left: 1px solid #ccc;
+    border-color: white;
+}
+.progress-section[data-index='10'] {
+    flex: 1;  /* This ensures each section takes up an equal amount of space */
+    background-color: lightgray;  /* Default background color */
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    border-color: white;
+}
+.progress-section.correct {
+    background-color: var(--light-light-green);
+}
+.progress-section.incorrect {
+    background-color: var(--light-red);
+}
+.progress-section.current {
+    background-color: var(--water);
+}
+
+.scrollable-list {
+    box-sizing: border-box;  /* ensures padding and border are included in width */
+    min-width: 350px;
+    width: 100%;
+    height: 250px;
+    overflow-y: auto;
+    border: 2px solid var(--blue);
+    border-radius: 4px;
+    margin: -10px 0px -15px 0px;
+    padding: 4px 4px;
+    font-size: 14px;
+}
+
+.plant-entry {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--light-gray);
+    padding: 8px 0;
+    cursor: pointer;
+    align-items: center;
+    background-color: white;
+}
+
+.scientific-name {
+    flex: 1;
+    width: 150px;
+    align-items: center;
+}
+
+.common-names {
+    flex: 2;
+    padding-left: 12px;
+    align-items: center;
+}
+
+#search-bar {
+    width: 100%;
+    overflow-y: auto;
+    border: 2px solid var(--blue);
+    border-radius: 4px;
+    font-size: 20px;
+    padding: 0;
+    justify-content: center;
+    margin:0px;
+}
