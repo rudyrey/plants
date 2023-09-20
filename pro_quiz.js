@@ -1,7 +1,5 @@
 updateTitleWithState();
 
-import { jsonData } from "./quiz-json.js";
-
 const quizElement = document.getElementById("quiz");
 const nextQuestionButton = document.getElementById("next-question");
 const seeResultsButton = document.getElementById("see-results");

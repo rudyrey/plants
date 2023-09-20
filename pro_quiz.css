@@ -51,7 +51,7 @@ body {
 img {
   margin-bottom: 0px;
   border-radius: 0px;
-  max-height: 300px;
+  max-height: 260px;
 }
 li {
     display: flex; 
@@ -303,7 +303,7 @@ li {
 /* Quiz */
 .next-questions {
   width: 100%;
-  height: 50px; /* Adjust the height as per your requirements */
+  height: 36px; /* Adjust the height as per your requirements */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -329,7 +329,7 @@ li {
 #next-question {
     position: flex;
     display: none;
-    padding: 10px 20px;
+    padding: 6px 20px;
     background-color: #808080;
     color: white;
     cursor: pointer;
@@ -697,11 +697,11 @@ li {
     box-sizing: border-box;  /* ensures padding and border are included in width */
     min-width: 350px;
     width: 100%;
-    height: 250px;
+    height: 200px;
     overflow-y: auto;
     border: 2px solid var(--blue);
     border-radius: 4px;
-    margin: -10px 0px -15px 0px;
+    margin: -15px 0px -15px 0px;
     padding: 4px 4px;
     font-size: 14px;
 }
