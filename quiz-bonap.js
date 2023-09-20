@@ -1,8 +1,3 @@
-import {
-  jsonData
-} from "./quiz-json.js";
-//const quizElement = document.getElementById("quiz");
-
 let questionCount = 0;
 let correctCount = 0;
 let answerTracking = "";
